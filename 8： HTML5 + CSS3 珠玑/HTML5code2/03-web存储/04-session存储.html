@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text"/>
+    <button>sessionStroage设置</button>
+    <button>sessionStroage获取</button>
+    <button>sessionStroage更新</button>
+    <button>sessionStroage删除</button>
+    <button>sessionStroage更新</button>
+
+    <script>
+        var txt=document.querySelector('input');
+
+        btns=document.querySelectorAll('button');
+
+        btns[0].onclick=function(){
+            sessionStorage.setItem('userName',txt.value);
+        }
+
+        btns[1].onclick=function(){
+           txt.value= sessionStorage.getItem('userName');
+        }
+
+        btns[2].onclick=function(){
+            sessionStorage.setItem('userName',txt.value);
+        }
+
+        btns[3].onclick=function(){
+            sessionStorage.removeItem('userName');
+        }
+
+        btns[4].onclick=function(){
+            sessionStorage.clear();
+        }
+
+
+
+    </script>
+</body>
+</html>

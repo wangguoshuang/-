@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			border: 1px solid #0094ff;
+			margin: 20px auto;
+		}
+		.showBox{
+			width: 121px;
+			height: 140px;
+		}
+		.infoBox{
+			width: 250px;
+			height: 100px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class='showBox'>
+		
+	</div>
+	<div class='infoBox'>
+		
+	</div>
+	<input type="button"  value='jay' onclick='changeStar(this.value)'>
+	<input type="button" value='baby' onclick='changeStar(this.value)'>
+	<input type="button" value='fourFather' onclick='changeStar(this.value)'>
+</body>
+</html>
+<script type="text/javascript">
+	function changeStar(name){
+		// 1.
+		var ajax = new XMLHttpRequest();
+		// 2.
+		ajax.open('get','getStar.php?starName='+name);
+		// 3. 去吧 皮卡丘(发送请求)
+		ajax.send();
+		//4.绑定事件
+		ajax.onreadystatechange = function () {
+			// 判断
+			if (ajax.readyState==4 &&ajax.status==200) {
+				// console.log(ajax.responseText);
+				// 分割字符串
+				var infoArr = ajax.responseText.split("|"); 
+				console.log(infoArr);
+
+				// 修改 showBox的 背景图片
+				document.querySelector('.showBox').style.background ="url("+infoArr[0]+")";
+				// 修改 infoBox的 文本
+				document.querySelector('.infoBox').innerText =infoArr[1];
+			}
+		}
+	}
+</script>

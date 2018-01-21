@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$watch</title>
+    
+    <script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="demoController">
+    <input type="text" ng-model="name">
+     <p>{{name}}</p>
+     
+    <script>
+       var app = angular.module('myApp',[]);
+       app.controller('demoController',function($scope){
+           // 初始化数据模型
+           $scope.name=1;
+           //var a;
+           // 监视数据模型的变化
+           // 第一个参数,数据模型名的字符串形式
+           // 第二个参数，是一个回调函数：有两个参数，分别是变化后的值，和变化前的值
+             $scope.$watch('name',function(nowValue,oldValue){
+                     $scope.name=$scope.name+1;
+
+                           
+
+
+                   console.log(nowValue);
+                  console.log(oldValue);
+             })
+       })
+    </script>
+</body>
+</html>

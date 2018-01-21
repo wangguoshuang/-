@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05第三方依赖</title>
+    <script type="text/javascript" src="./js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<input type="" name="v1" id="v1" value="1">
+<input type="" name="v2" id="v2" value="1">
+    
+</body>
+    <script type="text/javascript">
+    
+ var calculator=(function(){
+       var add=function(v1,v2){
+        return v1+v2;
+       }
+       var substract=function(v1,v2){
+            return v1-v2;
+       }
+        var mutiply=function(v1,v2){
+            return v1*v2;
+       }
+       var divide=function(v1,v2){
+         return v1/v2;
+       }
+       return {
+            add:add,
+            substract:substract,
+            mutiply:mutiply,
+            divide:divide
+       }
+    })()
+
+    var calculator=(function(cal,$){
+      cal.add2=function(){
+          var v1=$('#v1').val();
+          var v2= $('#v2').val();
+ 
+         return (v1-0)+(v2-0);
+      }
+
+      return cal;
+
+    })(window.calculator||{},window.$)
+    //我在这告诉你我要jquery
+    //依赖注入
+    //很牵强的解决文件依赖问题的方法
+    </script>
+</html>

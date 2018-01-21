@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 自定义服务</title>
+</head>
+<body>
+	<div ng-controller="DemoController">
+		<h1>{{now}}</h1>
+	</div>
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		var App = angular.module('App', []);
+
+		App.controller('DemoController', ['$scope', 'showTime', function ($scope, showTime) {
+
+			$scope.now = showTime.now();
+
+			showTime.sayHello();
+
+		}]);
+
+		// 自定义服务显示日期
+		// 提供了3种方法实现自定义服务
+		// factory、service、value
+		App.service('showTime', ['$filter', function ($filter) {
+
+			// return {
+			// 	showTime: function () {
+
+			// 	}
+			// }
+
+			var now = new Date;
+			var date = $filter('date');
+
+			// 向对象上添加具体方法
+			this.now = function () {
+				return date(now, 'yyyy/MM/dd hh:mm:ss');
+			}
+
+			// 添加具体方法
+			this.sayHello = function () {
+				alert('你好');
+			}
+
+		}]);
+
+	</script>
+
+</body>
+</html>

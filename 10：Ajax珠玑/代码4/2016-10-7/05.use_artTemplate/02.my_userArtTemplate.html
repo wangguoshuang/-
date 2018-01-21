@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- 导入 -->
+<script type="text/javascript" src='js/template-native.js'></script>
+
+<!-- 模板 
+	<%=属性名%> 可以直接输出结果
+
+-->
+<!-- 
+  <% for (var i = 0; i < list.length; i ++) { %>
+        <li>索引 <%= i + 1 %> ：<%= list[i] %></li>
+    <% } %>	
+ -->
+<script type="text/template" id='template'>
+	<ul>
+		<li><%=name%></li>
+		<li><%=use%></li>
+		<li><%=skill%></li>
+		<ul>
+			<% for(var i =0;i<friend.length;i++){ %>
+			<li>索引为<%=i%><%=friend[i]%></li>
+			<% } %>
+		</ul>
+	</ul>
+</script>
+
+<!-- 准备对象 并使用 -->
+
+<script type="text/javascript">
+	// 准备对象
+	var obj ={
+		name:"西兰花",
+		skill:"长得像花菜",
+		use:'防辐射',
+		friend:['花菜','菜花','翠花','方便面']
+	};
+
+	// 调用 模板引擎的方法
+	/*
+		参数1:模板的id
+		参数2:对象
+	*/
+	var resultStr =template('template',obj);
+	console.log(resultStr);
+
+	// 用到 界面上
+	document.body.innerHTML = resultStr;
+</script>

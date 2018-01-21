@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" class="txt"/>
+    <button>localStorage存储数据</button>
+    <button>localStorage获取数据</button>
+    <button>localStorage更新数据</button>
+    <button>localStorage删除数据</button>
+    <button>localStorage清空数据</button>
+
+    <script>
+        /*
+        * localStorage 数据存储在硬盘上，永久生效 ，除非手动删除
+        * */
+
+        var txt=document.querySelector('.txt');
+        var btns=document.querySelectorAll('button');
+
+        // 存储数据
+        btns[0].onclick=function(){
+            window.localStorage.setItem('userName',txt.value);
+        }
+
+//        获取数据
+        btns[1].onclick=function(){
+          txt.value= window.localStorage.getItem('userName');
+        }
+    </script>
+</body>
+</html>

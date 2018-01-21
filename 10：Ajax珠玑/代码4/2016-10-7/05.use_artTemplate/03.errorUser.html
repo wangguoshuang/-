@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- 导入 -->
+<script type="text/javascript" src='js/template-native.js'></script>
+
+<!-- 模板 
+	<%=属性名%> 可以直接输出结果
+
+-->
+<!-- 
+  <% for (var i = 0; i < list.length; i ++) { %>
+        <li>索引 <%= i + 1 %> ：<%= list[i] %></li>
+    <% } %>	
+ -->
+<script type="text/template" id='template'>
+	<ul>
+		<% for(var i=0;i<foodArr.length;i++){%>
+			<li><%=foodArr[i]%></li>
+		<%}%>
+	</ul>
+</script>
+
+<!-- 准备对象 并使用 -->
+
+<script type="text/javascript">
+	// 准备对象(数组)
+	var obj =[
+		'西兰花',
+		'西葫芦',
+		'西红柿',
+		'西瓜',
+		'西游记'
+	];
+	// 将 数组包装到 一个 对象中
+	var foodObj = {
+		foodArr:obj
+	}
+
+	// 调用 模板引擎的方法
+	/*
+		参数1:模板的id
+		参数2:对象
+	*/
+	var resultStr =template('template',foodObj);
+	
+	console.log(resultStr);
+
+	// 用到 界面上
+	document.body.innerHTML = resultStr;
+</script>

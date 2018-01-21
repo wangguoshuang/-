@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 路由和多视图</title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #F7F7F7;
+			font-family: Arial;
+		}
+
+		.wrapper {
+			max-width: 980px;
+			margin: 50px auto;
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			list-style: none;
+			background-color: #000;
+			border-radius: 4px;
+		}
+
+		li {
+			float: left;
+			width: 120px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			font-size: 18px;
+		}
+
+		li.active {
+			background-color: #333;
+		}
+
+		li a {
+			display: block;
+			color: #FFF;
+			text-decoration: none;
+		}
+
+		.content {
+			margin-top: 30px;
+			font-size: 24px;
+			padding: 0 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- 导航菜单 -->
+		<ul>
+			<li class="active">
+				<a href="#/index/5/abc/7">Index</a>
+			</li>
+			<li>
+				<a href="#/introduce">Introduce</a>
+			</li>
+			<li>
+				<a href="#/contact">Contact Us</a>
+			</li>
+			<li>
+				<a href="#/list">List</a>
+			</li>
+		</ul>
+		<!-- 内容 -->
+		<div class="content">
+			<!-- 占位符 -->
+			<div ng-view></div>
+		</div>
+
+	</div>
+	<!-- AngularJS核心框架 -->
+	<script src="./libs/angular.min.js"></script>
+	<!-- 路由模块理解成插件 -->
+	<script src="./libs/angular-route.js"></script>
+	<script>
+		// 依赖ngRoute模块
+		var App = angular.module('App', ['ngRoute']);
+
+		// 需要对路由模块进行配置，使其正常工作
+		App.config(['$routeProvider', function ($routeProvider) {
+
+			$routeProvider.when('/index/:id/:page/:p', {
+				templateUrl: 'abc.html',
+				controller: 'IndexController'
+			})
+			.otherwise({
+				redirectTo: '/index'
+			});
+
+		}]);
+
+		// 提供了一个专门负责获取参数的一个服务$routeParams
+		App.controller('IndexController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+
+			$scope.content = '练习路由功能';
+
+			console.log($routeParams);
+
+		}]);
+
+	</script>
+
+</body>
+</html>

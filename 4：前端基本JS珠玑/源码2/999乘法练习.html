@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script>
+    	// var sum=0;
+    	// for (var i=1;i<=100;i++) {
+    	// 	if(i%7===0){
+     //           continue; 
+    	// 	}
+    	// 	sum+=i;
+    	// }
+    	// console.log(sum);
+     // var sum=0;
+     // for(var i=1;i<=100;i++) {
+     // 	if(i%3===0) {
+     // 		continue;
+     // 	}
+     // 	sum+=i;
+     // 	if(sum>2000) {
+     // 		alert(sum);
+     // 		break;
+     // 	}
+     // }
+     var arr=[10,-20,30,40];
+     var maxValue=arr[0];
+     var minValue=arr[0];
+     var maxIndex=0;
+     var minIndex=0;
+     for(var i=1;i<=arr.length;i++){
+     	if(arr[i]>maxValue) {
+     		maxValue=arr[i];
+     		maxIndex=i;
+     	}
+     	if(arr[i]<minValue) {
+     		minValue=arr[i];
+     		minIndex=i;
+     	}
+     }
+     console.log(maxValue);
+     console.log(maxIndex);
+     console.log(minValue);
+     console.log(minIndex);	
+    </script>
+    </body>
+</html>

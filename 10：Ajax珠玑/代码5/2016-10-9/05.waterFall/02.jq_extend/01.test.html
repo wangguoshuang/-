@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- jq的插件 用的时候 先倒入jq  在导入插件 -->
+<script type="text/javascript" src='../../js/jquery.min.js'></script>
+<script type="text/javascript" src='my.js'></script>
+<script type="text/javascript" src='jquery.waterfall.js'></script>
+<script type="text/javascript">
+	
+	// 使用 自己定义的jq插件
+	$('body').becomeYellow();
+
+	// 使用eaffood
+	$.eatFood();
+
+	// 使用自己封装的瀑布流插件
+	$('body').waterfall();
+
+</script>

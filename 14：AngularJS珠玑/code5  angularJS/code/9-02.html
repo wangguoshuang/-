@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 模块加载</title>
+</head>
+<body>
+	<div ng-controller="DemoController">
+		{{name}}
+	</div>
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		var App = angular.module('App', []);
+
+		// 直接运行$http、$rootScope服务
+		// $rootScope根作域
+
+		App.run(['$http', '$rootScope', function ($http, $rootScope) {
+
+			// 直接调用$http
+			$http({
+				url: 'example.php',
+				method: 'get'
+			});
+
+			// 根作用域
+			$rootScope.name = '祖宗';
+
+		}]);
+
+		App.controller('DemoController', ['$scope', function($scope) {
+			//
+			// 
+			$scope.name = '后代';
+		}]) 
+
+	</script>
+
+</body>
+</html>

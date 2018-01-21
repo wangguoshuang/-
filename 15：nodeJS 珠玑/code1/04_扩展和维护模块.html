@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04扩展和维护模块</title>
+    <script type="text/javascript">
+       //封装性 划分私有空间
+    //还是需要约定
+    var calculator=(function(){
+       var add=function(v1,v2){
+        return v1+v2;
+       }
+       var substract=function(v1,v2){
+            return v1-v2;
+       }
+        var mutiply=function(v1,v2){
+            return v1*v2;
+       }
+       var divide=function(v1,v2){
+         return v1/v2;
+       }
+       return {
+            add:add,
+            substract:substract,
+            mutiply:mutiply,
+            divide:divide
+       }
+    })()
+
+    </script>
+    <script>   
+    //开闭原则 对直接修改关闭、扩展开放   
+     var calculator=(function(cal){
+        cal.mod=function(v1,v2){
+          return v1%v2;
+        }
+        return cal;
+     })(window.calculator||{})
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

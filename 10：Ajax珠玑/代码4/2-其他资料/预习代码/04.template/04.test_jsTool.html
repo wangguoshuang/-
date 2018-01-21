@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <script type="text/javascript" src='template.js'></script>
+          <!-- 如果 写的是  text/javascript 就相当于告诉浏览器 里面的是 js代码-->
+          <script type="text/template" id='template01'>
+                    <tr>
+                              <td>
+                                        <%=name%>
+                              </td>
+                              <td>
+                                        <%=skill%>
+                              </td>
+                              <td>
+                                        <%=foodName%>
+                              </td>
+                    </tr>
+          </script>
+</head>
+
+<body>
+          <table></table>
+</body>
+
+</html>
+<script type="text/javascript">
+/* 基本使用
+		var person = {
+			name:"宋仲基",
+			skill:"撩妹"
+		};
+		// 定义 模板文本
+		var templateStr = "我的名字是:<%=name%>,我最擅长的技能:<%=skill %>";
+
+		var resultStr = $_fox.template(templateStr,person); 
+		console.log(resultStr);
+		*/
+
+// 模板引擎的 正确使用方式
+/*
+	1.定义模板
+	2.有对象
+	3.调用模板引擎的方法 进行替换
+
+ */
+// 找到 作为 模板的script标签 
+var scripitObj = document.querySelector('#template01');
+// 获取 标签中的 文本质
+var templateStr = scripitObj.innerHTML;
+// 定义对象
+var stars = [{
+          name: "周杰伦",
+          skill: "哎哟,不错,这个",
+          foodName: "秋刀鱼"
+}, {
+          name: "九把刀",
+          skill: "写小说",
+          foodName: "苹果"
+}];
+
+var str = "";
+for (var i = 0; i < stars.length; i++) {
+          str += $_fox.template(templateStr, stars[i]);
+}
+console.log(str);
+
+// 找到 页面中 需要添加的位置
+document.querySelector('table').innerHTML = str;
+</script>

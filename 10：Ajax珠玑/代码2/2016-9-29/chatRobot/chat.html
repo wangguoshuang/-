@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <style type="text/css">
+          html,
+          body {
+                    height: 100%;
+                    margin: 0;
+          }
+          
+          .container {
+                    display: flex;
+                    height: 100%;
+                    border: 1px solid #0094ff;
+                    width: 70%;
+                    margin: 0 auto;
+                    flex-direction: column;
+          }
+          
+          .messageBox {
+                    flex: 9;
+                    background: yellowgreen;
+                    overflow: scroll;
+          }
+          
+          .inputBox {
+                    flex: 2;
+                    background: skyblue;
+                    display: flex;
+          }
+          
+          .messageText {
+                    flex: 8;
+                    font-size: 30px;
+          }
+          
+          .sendBtn {
+                    flex: 2;
+                    font-size: 30px;
+                    border-width: 0px;
+                    background: hotpink;
+          }
+          
+          .messageBox div {
+                    height: 30px;
+                    border: 1px solid #0094ff;
+                    line-height: 30px;
+          }
+          
+          .self {
+                    background: pink;
+          }
+          
+          .other {
+                    text-align: right;
+                    background: white;
+          }
+          </style>
+</head>
+
+<body>
+          <div class="container">
+                    <div class="messageBox">
+                    </div>
+                    <div class='inputBox'>
+                              <input type="text" class='messageText'>
+                              <input type="button" class='sendBtn' value='发送'>
+                    </div>
+          </div>
+</body>
+
+</html>
+<script type="text/javascript">
+// 绑定点击事件
+document.querySelector('.sendBtn').onclick = function(event) {
+          var xmlObj = new XMLHttpRequest();
+
+
+          // 获取 用户输入的 文本框的值
+          var inputValue = document.querySelector('.messageText').value;
+
+          xmlObj.open('get', 'chat.php?message=' + inputValue);
+
+          // 创建 div  设置class 为 self  将 输入的内容 设置进去
+          var createDiv = document.createElement('div');
+          createDiv.className = 'self';
+          createDiv.innerText = inputValue;
+          // 添加到messageBox 中
+          document.querySelector('.messageBox').appendChild(createDiv);
+
+          xmlObj.send();
+
+          xmlObj.onreadystatechange = function() {
+                    if (xmlObj.readyState == 4 && xmlObj.status == 200) {
+                              // 根据 服务器返回的 内容 修改页面
+                              // 
+                              console.log(xmlObj.responseText);
+
+                              //  创建 div  设置class为 other 设置innerText 添加到 messageBox中
+                              
+                              var otherDiv = document.createElement('div');
+         		    otherDiv.className = 'other';
+          		    otherDiv.innerText = xmlObj.responseText;
+        		  // 添加到messageBox 中
+        		  document.querySelector('.messageBox').appendChild(otherDiv);
+                    }
+          }
+}
+</script>

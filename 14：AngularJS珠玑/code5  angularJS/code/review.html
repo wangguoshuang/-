@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="./libs/jquery.min.js"></script>
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		
+		$.ajax({
+			url: '',
+			type: 'get/post',
+			dataType: 'jsonp',
+			// data: {name: 'itcast', age: 10}, // name=itcast&age=10
+			data: 'name=itcast&age=10',
+			// 能不能设置请求头？
+			success: function (data) {
+				// data 返回的数据
+			}
+		});
+
+		// XMLHttpRequest; 是不能完成跨域访问的
+
+		$http({
+			url: 'example.php?call=JSON_CALLBACK',
+			method: 'jsonp',
+			headers: {}, // 请求头
+			data: {}, // post
+			params: {
+				call: 'JSON_CALLBACK' // angular_callback.0({name: 1})
+			}, // get
+		}).success(function (info) {
+			// 
+		});
+
+	</script>
+
+	<img src="" alt="">
+	<link rel="stylesheet" href="a.css">
+	<script src="b.js"></script>
+	<script src="p.php?a=1&b=2"></script>
+	<script>
+		function fn(arg) {
+
+			alert(1);
+		}
+	</script>
+	<script src="p.php?call=fn"></script>
+
+	<!-- echo fn({name: itcast, age: 10}); -->
+</body>
+</html>

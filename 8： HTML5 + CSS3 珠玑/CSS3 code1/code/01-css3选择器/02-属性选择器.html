@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 300px;
+            height: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 40px;
+            margin-top:5px;
+        }
+    /*属性选择器
+        id选择器  #
+        类名选择器：.
+        属性选择器：[]
+    */
+
+        /*
+            E[attr]：选中带有arrt 属性的E元素
+            E[attr="val"]:选中带有attr属性，且attr值为"val“的E元素
+            ^ :开头  $:结束  *：包含
+            E[attr^="val"]:选中带有attr属性，且attr值为以"val“开头的E元素
+            E[attr$="val"]:选中带有attr属性，且attr值为以"val“结尾的E元素
+            E[attr*="val"]:选中带有attr属性，且attr值为包含"val“的E元素
+
+        */
+        
+        /*div[title]{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选中页面中的div 并且带有 class属性*/
+       /*div[class]{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选中页面中的div 并且带有 class属性， 属性的值等于 box7*/
+        /*div[class="box7"]{*/
+            /*background-color: red;*/
+        /*}*/
+        
+        /* 选页面中div  并且 带有class属性，class属性以 aa开头*/
+
+        /*div[class^="aa"]{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选页面中div  并且 带有class属性，class属性以 bb结尾*/
+
+        /*div[class$="bb"]{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选页面中div  并且 带有class属性，class属性中包含 aa*/
+
+        div[class*='aa']{
+            background-color: red;
+        }
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box" title="我是第一个盒子" ></div>
+    <div class="aabox1">1</div>
+    <div class="bbbox2">2</div>
+    <div class="box3aa">3</div>
+    <div class="box4bb">4</div>
+    <div class="aabox5bb">5</div>
+    <div class="bbbox6aa">6</div>
+    <div class="box7">7</div>
+    <div >8</div>
+</body>
+</html>

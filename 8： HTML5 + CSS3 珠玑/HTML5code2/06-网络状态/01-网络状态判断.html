@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+    * window.online　当网络连接时调用
+    * window.offline 当网络断开是 调用
+    * */
+//    window.ononline=function(){}
+
+    window.addEventListener('online',function(){
+        alert('网络已连接！');
+    })
+
+    window.addEventListener('offline',function(){
+        alert('网络连接已断开！');
+    })
+</script>

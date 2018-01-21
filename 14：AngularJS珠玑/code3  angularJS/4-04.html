@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 数据绑定</title>
+	<style>
+		ul {
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div ng-controller="DemoController">
+		<ul>
+			<li><button ng-click="single()">单击</button></li>
+			<li><button ng-dblclick="double()">双击</button></li>
+			<li><input type="text" ng-blur="blur()"></li>
+			<li ng-mouseout="mouseout()">一些内容</li>
+		</ul>
+	</div>
+	
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		var App = angular.module('App', []);
+
+		App.controller('DemoController', ['$scope', function ($scope) {
+
+			$scope.single = function () {
+				alert('我被单击了');
+			}
+
+			$scope.double = function () {
+				alert('我被双击了');
+			}
+
+			$scope.blur = function () {
+				alert('失去焦点了');
+			}
+
+			$scope.mouseout = function () {
+				alert('鼠标移出了');
+			}
+
+		}])
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src='../js/jquery.min.js'></script>
+    <script type="text/javascript" src='../js/template-native.js'></script>
+
+    <script type="text/template" id='template'>
+    	<%for(var i=0;i<movie.length;i++){%>
+		<tr>
+			<td><%=movie[i].movie_name%></td>
+			<td><img src="<%=movie[i].movie_picture%>" alt=""></td>
+			<td><%=movie[i].movie_release_date%></td>
+			<td><%=movie[i].movie_score%></td>
+			<td><%=movie[i].movie_starring%></td>
+		</tr>
+    	<%}%>
+    </script>
+    <script type="text/javascript">
+    $(function() {
+    	$('input').click(function () {
+    		$.ajax({
+    			url:' http://api.map.baidu.com/telematics/v3/movie?qt=hot_movie&location=上海&ak=tq0Kt0NFYheTCj5mszast0drkIqqVTNn&output=json',
+    			dataType:'jsonP',
+    			success:function (data) {
+    				// console.log(data);
+    				// 为了使用方便 获取 data的 result属性
+    				var filmResult = data.result;
+
+    				// 读取模板 生成html
+    				var str = template('template',filmResult);
+
+    				// 添加到界面上 即可
+    				$('#filmTable').append(str);
+
+
+    			}
+    		})
+    	})
+    })
+    </script>
+</head>
+
+<body>
+    <input type="button" value='获取热映影片'>
+    <table id='filmTable'></table>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	// 准备正则 匹配至少一个 字母
+	var reg = /\w+/
+
+	// 准备挖好坑的字符串
+	var str ='我是一个来自南方的name,我爱吃food,我的爱好是habbit,我的朋友是friend';
+	// var str ='我是一个来自南方的,我爱吃我的爱好是';
+
+	// 准备 用来填坑的 对象
+	var obj = {
+		name:'柯基',
+		food:'狗粮',
+		habbit:'汪汪汪',
+		friend:'哈士奇'
+	}
+
+
+	// 对于一个 不知道 执行次数的 代码 可以怎么优化呢?
+
+	// 首先 使用正则对象 验证一次 字符串 while 会看 result 是否有值
+	var result;
+	while( result = reg.exec(str)){
+		// 获取 匹配的 key
+		var key = result[0];
+
+		// 通过key 获取value
+		var value = obj[key];
+
+		// 替换 
+		str = str.replace(key,value);
+		console.log(str);
+	}
+</script>

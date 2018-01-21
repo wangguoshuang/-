@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stars>
+	<person>
+		<name>黄子韬</name>
+		<path>images/hzt.jpg</path>
+		<skill>狗带</skill>
+	</person>
+	<person>
+		<name>岳云鹏</name>
+		<path>images/yyp.jpg</path>
+		<skill>卖萌,</skill>
+	</person>
+	<person>
+		<name>韩红</name>
+		<path>images/hh.jpg</path>
+		<skill>唱歌</skill>
+	</person>
+</stars>

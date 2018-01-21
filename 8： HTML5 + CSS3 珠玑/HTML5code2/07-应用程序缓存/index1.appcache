@@ -1,0 +1,14 @@
+CACHE MANIFEST
+
+#下面是要缓存的图片
+CACHE:
+    http://i.itcast.cn/Upload/Images/20160725/57958ab0321ed.jpg
+
+
+# 这里面指定要联网才能访问的资源
+NETWORK:
+  http://www.itcast.cn/images/slidead/BEIJING/2016230611232100.jpg
+
+#当前页面无法访问是退回到某一个页面
+FALLBACK:
+    02.html

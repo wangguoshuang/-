@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- script 如果type 不写 或者写成 text/javascript 都会当js解析 
+	如果写成其他 那么 首页页面中 看不到 ,然后 不会被解析
+	定义模板
+-->
+<script type="text/template" id='template'>
+	<ul>
+		<li>{{name}}</li>
+		<li>{{habbit}}</li>
+	</ul>
+</script>
+<!-- 导入插件 -->
+<script type="text/javascript" src='fox_template.js'></script>
+<script type="text/javascript">
+	// 准备替换的内容
+	// var str ='<ul><li>我的名字是{{name}}</li><li>我的爱好是{{habbit}}</li></ul>';
+
+	// 通过标签获取标签
+	var templateDom = document.querySelector("#template");
+	var str = templateDom.innerHTML;
+	console.log(str);
+
+	// 准备对象
+	var obj = {
+		name:"柯南",
+		habbit:"去哪,哪出事"
+	}
+
+	// 进行替换
+	var resultStr = fox_template_pro(str,obj);
+
+	console.log(resultStr);
+
+	// 添加到界面上
+	document.body.innerHTML = resultStr;
+</script>

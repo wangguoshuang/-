@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05第三方依赖</title>
+    <script type="text/javascript" src="./modules/seajs/2.2.0/sea.js"></script>
+</head>
+<body>
+<input type="" name="" value="1" id="v1">
+<input type="" name="" value="2" id="v2">
+    
+</body>
+    <script type="text/javascript">
+    //引入calculator入口模块,第一参数是入口模块的路径
+    //第二个函数是回调函数
+     seajs.use('./modules/calculator',function(cal){
+         console.log(cal.add2());
+
+     });
+    </script>
+</html>

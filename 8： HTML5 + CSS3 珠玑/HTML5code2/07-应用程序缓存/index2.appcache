@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+#要缓存的文件
+CACHE:
+    images/img1.jpg
+    images/img2.jpg
+    images/img3.jpg
+
+#需要联网访问的文件
+NETWORK:
+    images/img4.jpg

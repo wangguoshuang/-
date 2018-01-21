@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="mainApp">
+  <div ng-controller="ParentCtrl">                <!--父级-->
+    <div ng-controller="SelfCtrl">              <!--自己--> 
+    </div>
+</div>
+</div>
+</body>
+<script src="./angular.js"></script>
+<script>
+   var app=angular.module('mainApp',[]);
+   app.controller('SelfCtrl', function($scope) {
+       $scope.foo();
+   });
+
+   app.controller('ParentCtrl', function($scope) {
+		$scope.foo=function(){
+
+			console.log(123);
+		}
+	});
+    </script>
+</html>

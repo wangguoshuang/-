@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .qie{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+        .tou{
+            height: 80px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 60px 60px 0px 0px;
+            position: relative;
+        }
+        .eye_1,.eye_2{
+            width: 20px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px/15px 15px 15px 15px;
+
+        }
+        .eye_1{
+            position: absolute;
+            left: 35px;
+            top: 25px
+        }
+        .eye_2{
+            position: absolute;
+            right:35px;
+            top: 25px;
+        }
+        .eye_1_1{
+            height: 13px;
+            width: 10px;
+            background-color: #000;
+            border-radius: 5px 5px 5px 5px/6px 6px 6px 6px;
+            position: absolute;
+            left: 9px;
+            top:10px;
+        }
+        .eye_2_1{
+            height: 6px;
+            width: 15px;
+            background-color: #000;
+            border-radius: 7px 7px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 2px;
+            top: 12px;
+        }
+        .eye_2_2{
+            width: 13px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 6px 6px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 3px;
+            top: 14px;
+        }
+        .zui{
+            height: 20px;
+            width: 72px;
+            background-color: #ffad00;
+            border-radius: 36px 36px 36px 36px/8px 8px 12px 12px;
+            position: absolute;
+            left: 23px;
+            top: 58px;
+        }
+        .tou_2{
+            height: 10px;
+            width: 120px;
+            background-color: #000;
+            position: absolute;
+            top: 80px;
+            border-radius: 0 0 62px 62px/ 0 0 10px 10px;
+            z-index: 3;
+        }
+        .weijin{
+            position: relative;
+            z-index: 2;
+        }
+        .weijin_left{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color:  transparent #e91f1f #e91f1f transparent ;
+            position: absolute;
+            left: -9px;
+        }
+        .weijin_content{
+            height: 20px;
+            width: 120px;
+            background-color: #e91f1f;
+        }
+        .weijin_right{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color: transparent transparent  #e91f1f #e91f1f ;
+            position: absolute;
+            left: 120px;
+            bottom:0px;
+        }
+        .weijin_bottom{
+            height: 10px;
+            width: 140px;
+            background-color: #e91f1f;
+            border-radius: 0 0 70px 70px/0 0 10px 10px;
+            position: absolute;
+            left: -10px
+        }
+        .weijin_1{
+            height: 30px;
+            width: 24px;
+            background-color: #e91f1f;
+            position: absolute;
+            left: 20px;
+
+        }
+        .body{
+            height: 85px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 0 0 60px 60px/0 0 50px 50px;
+            position: relative;
+            z-index: 1
+        }
+        .duzi{
+            height: 78px;
+            width: 90px;
+            background-color: #fff;
+            border-radius: 0 0 45px 45px/0 0 45px 45px;
+            position: absolute;
+            left: 15px;
+        }
+        .hand{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            left: -18px;
+            top: -4px;
+            border-radius: 18px 0px 18px 2px/52px 0px 28px 2px ;
+        }
+        .hand_2{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            right: -18px;
+            top: -4px;
+            border-radius:0px 18px 2px 18px / 0px 52px 2px 28px
+        }
+        .footer{
+            height: 16px;
+            width: 120px;
+            background-color: #fcb117;
+            border-radius: 40px 40px 3px 3px/13px 13px 2px 2px;
+            position: relative;
+            bottom: 16px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="qie">
+    <!-- 头部 -->
+    <div class="tou">
+        <div class="eye_1">
+            <div class="eye_1_1"></div>
+        </div>
+        <div class="eye_2">
+            <div class="eye_2_1"></div>
+            <div class="eye_2_2"></div>
+        </div>
+        <div class="zui"></div>
+        <div class="tou_2"></div>
+    </div>
+    <!-- 围巾 -->
+    <div class="weijin">
+        <div class="weijin_left"></div>
+        <div class="weijin_content"></div>
+        <div class="weijin_right"></div>
+        <div class="weijin_bottom"></div>
+        <div class="weijin_1"></div>
+    </div>
+    <!-- 身体 -->
+    <div class="body">
+        <div class="duzi"></div>
+        <div class="hand"></div>
+        <div class="hand_2"></div>
+    </div>
+    <!-- 脚 -->
+    <div class="footer"></div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .qie{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+        .tou{
+            height: 80px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 60px 60px 0px 0px;
+            position: relative;
+        }
+        .eye_1,.eye_2{
+            width: 20px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px/15px 15px 15px 15px;
+
+        }
+        .eye_1{
+            position: absolute;
+            left: 35px;
+            top: 25px
+        }
+        .eye_2{
+            position: absolute;
+            right:35px;
+            top: 25px;
+        }
+        .eye_1_1{
+            height: 13px;
+            width: 10px;
+            background-color: #000;
+            border-radius: 5px 5px 5px 5px/6px 6px 6px 6px;
+            position: absolute;
+            left: 9px;
+            top:10px;
+        }
+        .eye_2_1{
+            height: 6px;
+            width: 15px;
+            background-color: #000;
+            border-radius: 7px 7px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 2px;
+            top: 12px;
+        }
+        .eye_2_2{
+            width: 13px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 6px 6px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 3px;
+            top: 14px;
+        }
+        .zui{
+            height: 20px;
+            width: 72px;
+            background-color: #ffad00;
+            border-radius: 36px 36px 36px 36px/8px 8px 12px 12px;
+            position: absolute;
+            left: 23px;
+            top: 58px;
+        }
+        .tou_2{
+            height: 10px;
+            width: 120px;
+            background-color: #000;
+            position: absolute;
+            top: 80px;
+            border-radius: 0 0 62px 62px/ 0 0 10px 10px;
+            z-index: 3;
+        }
+        .weijin{
+            position: relative;
+            z-index: 2;
+        }
+        .weijin_left{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color:  transparent #e91f1f #e91f1f transparent ;
+            position: absolute;
+            left: -9px;
+        }
+        .weijin_content{
+            height: 20px;
+            width: 120px;
+            background-color: #e91f1f;
+        }
+        .weijin_right{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color: transparent transparent  #e91f1f #e91f1f ;
+            position: absolute;
+            left: 120px;
+            bottom:0px;
+        }
+        .weijin_bottom{
+            height: 10px;
+            width: 140px;
+            background-color: #e91f1f;
+            border-radius: 0 0 70px 70px/0 0 10px 10px;
+            position: absolute;
+            left: -10px
+        }
+        .weijin_1{
+            height: 30px;
+            width: 24px;
+            background-color: #e91f1f;
+            position: absolute;
+            left: 20px;
+
+        }
+        .body{
+            height: 85px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 0 0 60px 60px/0 0 50px 50px;
+            position: relative;
+            z-index: 1
+        }
+        .duzi{
+            height: 78px;
+            width: 90px;
+            background-color: #fff;
+            border-radius: 0 0 45px 45px/0 0 45px 45px;
+            position: absolute;
+            left: 15px;
+        }
+        .hand{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            left: -18px;
+            top: -4px;
+            border-radius: 18px 0px 18px 2px/52px 0px 28px 2px ;
+        }
+        .hand_2{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            right: -18px;
+            top: -4px;
+            border-radius:0px 18px 2px 18px / 0px 52px 2px 28px
+        }
+        .footer{
+            height: 16px;
+            width: 120px;
+            background-color: #fcb117;
+            border-radius: 40px 40px 3px 3px/13px 13px 2px 2px;
+            position: relative;
+            bottom: 16px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="qie">
+    <!-- 头部 -->
+    <div class="tou">
+        <div class="eye_1">
+            <div class="eye_1_1"></div>
+        </div>
+        <div class="eye_2">
+            <div class="eye_2_1"></div>
+            <div class="eye_2_2"></div>
+        </div>
+        <div class="zui"></div>
+        <div class="tou_2"></div>
+    </div>
+    <!-- 围巾 -->
+    <div class="weijin">
+        <div class="weijin_left"></div>
+        <div class="weijin_content"></div>
+        <div class="weijin_right"></div>
+        <div class="weijin_bottom"></div>
+        <div class="weijin_1"></div>
+    </div>
+    <!-- 身体 -->
+    <div class="body">
+        <div class="duzi"></div>
+        <div class="hand"></div>
+        <div class="hand_2"></div>
+    </div>
+    <!-- 脚 -->
+    <div class="footer"></div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .qie{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+        .tou{
+            height: 80px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 60px 60px 0px 0px;
+            position: relative;
+        }
+        .eye_1,.eye_2{
+            width: 20px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px/15px 15px 15px 15px;
+
+        }
+        .eye_1{
+            position: absolute;
+            left: 35px;
+            top: 25px
+        }
+        .eye_2{
+            position: absolute;
+            right:35px;
+            top: 25px;
+        }
+        .eye_1_1{
+            height: 13px;
+            width: 10px;
+            background-color: #000;
+            border-radius: 5px 5px 5px 5px/6px 6px 6px 6px;
+            position: absolute;
+            left: 9px;
+            top:10px;
+        }
+        .eye_2_1{
+            height: 6px;
+            width: 15px;
+            background-color: #000;
+            border-radius: 7px 7px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 2px;
+            top: 12px;
+        }
+        .eye_2_2{
+            width: 13px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 6px 6px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 3px;
+            top: 14px;
+        }
+        .zui{
+            height: 20px;
+            width: 72px;
+            background-color: #ffad00;
+            border-radius: 36px 36px 36px 36px/8px 8px 12px 12px;
+            position: absolute;
+            left: 23px;
+            top: 58px;
+        }
+        .tou_2{
+            height: 10px;
+            width: 120px;
+            background-color: #000;
+            position: absolute;
+            top: 80px;
+            border-radius: 0 0 62px 62px/ 0 0 10px 10px;
+            z-index: 3;
+        }
+        .weijin{
+            position: relative;
+            z-index: 2;
+        }
+        .weijin_left{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color:  transparent #e91f1f #e91f1f transparent ;
+            position: absolute;
+            left: -9px;
+        }
+        .weijin_content{
+            height: 20px;
+            width: 120px;
+            background-color: #e91f1f;
+        }
+        .weijin_right{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color: transparent transparent  #e91f1f #e91f1f ;
+            position: absolute;
+            left: 120px;
+            bottom:0px;
+        }
+        .weijin_bottom{
+            height: 10px;
+            width: 140px;
+            background-color: #e91f1f;
+            border-radius: 0 0 70px 70px/0 0 10px 10px;
+            position: absolute;
+            left: -10px
+        }
+        .weijin_1{
+            height: 30px;
+            width: 24px;
+            background-color: #e91f1f;
+            position: absolute;
+            left: 20px;
+
+        }
+        .body{
+            height: 85px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 0 0 60px 60px/0 0 50px 50px;
+            position: relative;
+            z-index: 1
+        }
+        .duzi{
+            height: 78px;
+            width: 90px;
+            background-color: #fff;
+            border-radius: 0 0 45px 45px/0 0 45px 45px;
+            position: absolute;
+            left: 15px;
+        }
+        .hand{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            left: -18px;
+            top: -4px;
+            border-radius: 18px 0px 18px 2px/52px 0px 28px 2px ;
+        }
+        .hand_2{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            right: -18px;
+            top: -4px;
+            border-radius:0px 18px 2px 18px / 0px 52px 2px 28px
+        }
+        .footer{
+            height: 16px;
+            width: 120px;
+            background-color: #fcb117;
+            border-radius: 40px 40px 3px 3px/13px 13px 2px 2px;
+            position: relative;
+            bottom: 16px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="qie">
+    <!-- 头部 -->
+    <div class="tou">
+        <div class="eye_1">
+            <div class="eye_1_1"></div>
+        </div>
+        <div class="eye_2">
+            <div class="eye_2_1"></div>
+            <div class="eye_2_2"></div>
+        </div>
+        <div class="zui"></div>
+        <div class="tou_2"></div>
+    </div>
+    <!-- 围巾 -->
+    <div class="weijin">
+        <div class="weijin_left"></div>
+        <div class="weijin_content"></div>
+        <div class="weijin_right"></div>
+        <div class="weijin_bottom"></div>
+        <div class="weijin_1"></div>
+    </div>
+    <!-- 身体 -->
+    <div class="body">
+        <div class="duzi"></div>
+        <div class="hand"></div>
+        <div class="hand_2"></div>
+    </div>
+    <!-- 脚 -->
+    <div class="footer"></div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .qie{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+        .tou{
+            height: 80px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 60px 60px 0px 0px;
+            position: relative;
+        }
+        .eye_1,.eye_2{
+            width: 20px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px/15px 15px 15px 15px;
+
+        }
+        .eye_1{
+            position: absolute;
+            left: 35px;
+            top: 25px
+        }
+        .eye_2{
+            position: absolute;
+            right:35px;
+            top: 25px;
+        }
+        .eye_1_1{
+            height: 13px;
+            width: 10px;
+            background-color: #000;
+            border-radius: 5px 5px 5px 5px/6px 6px 6px 6px;
+            position: absolute;
+            left: 9px;
+            top:10px;
+        }
+        .eye_2_1{
+            height: 6px;
+            width: 15px;
+            background-color: #000;
+            border-radius: 7px 7px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 2px;
+            top: 12px;
+        }
+        .eye_2_2{
+            width: 13px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 6px 6px 0px 0px/6px 6px 0px 0px;
+            position: absolute;
+            left: 3px;
+            top: 14px;
+        }
+        .zui{
+            height: 20px;
+            width: 72px;
+            background-color: #ffad00;
+            border-radius: 36px 36px 36px 36px/8px 8px 12px 12px;
+            position: absolute;
+            left: 23px;
+            top: 58px;
+        }
+        .tou_2{
+            height: 10px;
+            width: 120px;
+            background-color: #000;
+            position: absolute;
+            top: 80px;
+            border-radius: 0 0 62px 62px/ 0 0 10px 10px;
+            z-index: 3;
+        }
+        .weijin{
+            position: relative;
+            z-index: 2;
+        }
+        .weijin_left{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color:  transparent #e91f1f #e91f1f transparent ;
+            position: absolute;
+            left: -9px;
+        }
+        .weijin_content{
+            height: 20px;
+            width: 120px;
+            background-color: #e91f1f;
+        }
+        .weijin_right{
+            height: 0px;
+            width: 0px;
+            border-style: solid;
+            border-width: 10px 5px;
+            border-color: transparent transparent  #e91f1f #e91f1f ;
+            position: absolute;
+            left: 120px;
+            bottom:0px;
+        }
+        .weijin_bottom{
+            height: 10px;
+            width: 140px;
+            background-color: #e91f1f;
+            border-radius: 0 0 70px 70px/0 0 10px 10px;
+            position: absolute;
+            left: -10px
+        }
+        .weijin_1{
+            height: 30px;
+            width: 24px;
+            background-color: #e91f1f;
+            position: absolute;
+            left: 20px;
+
+        }
+        .body{
+            height: 85px;
+            width: 120px;
+            background-color: #000;
+            border-radius: 0 0 60px 60px/0 0 50px 50px;
+            position: relative;
+            z-index: 1
+        }
+        .duzi{
+            height: 78px;
+            width: 90px;
+            background-color: #fff;
+            border-radius: 0 0 45px 45px/0 0 45px 45px;
+            position: absolute;
+            left: 15px;
+        }
+        .hand{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            left: -18px;
+            top: -4px;
+            border-radius: 18px 0px 18px 2px/52px 0px 28px 2px ;
+        }
+        .hand_2{
+            height: 54px;
+            width: 20px;
+            background-color:#000;
+            z-index: 4px;
+            position: absolute;
+            right: -18px;
+            top: -4px;
+            border-radius:0px 18px 2px 18px / 0px 52px 2px 28px
+        }
+        .footer{
+            height: 16px;
+            width: 120px;
+            background-color: #fcb117;
+            border-radius: 40px 40px 3px 3px/13px 13px 2px 2px;
+            position: relative;
+            bottom: 16px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="qie">
+    <!-- 头部 -->
+    <div class="tou">
+        <div class="eye_1">
+            <div class="eye_1_1"></div>
+        </div>
+        <div class="eye_2">
+            <div class="eye_2_1"></div>
+            <div class="eye_2_2"></div>
+        </div>
+        <div class="zui"></div>
+        <div class="tou_2"></div>
+    </div>
+    <!-- 围巾 -->
+    <div class="weijin">
+        <div class="weijin_left"></div>
+        <div class="weijin_content"></div>
+        <div class="weijin_right"></div>
+        <div class="weijin_bottom"></div>
+        <div class="weijin_1"></div>
+    </div>
+    <!-- 身体 -->
+    <div class="body">
+        <div class="duzi"></div>
+        <div class="hand"></div>
+        <div class="hand_2"></div>
+    </div>
+    <!-- 脚 -->
+    <div class="footer"></div>
+</div>
+</body>
+</html>

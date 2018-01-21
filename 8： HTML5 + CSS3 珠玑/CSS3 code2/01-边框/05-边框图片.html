@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 500px;
+            height: 300px;
+            /*background-color: pink;*/
+            margin:100px auto;
+
+            /* 添加边框图片的 url*/
+
+            border-image-source: url(images/border.png);
+
+            /* 边框图片的裁剪*/
+            /* 裁剪顺序：上右下左*/
+            border-image-slice: 27 27 27 27;
+
+            /*边框图片的宽度*/
+            border-image-width: 27px;
+
+            /* 边框图片的平铺*/
+            /* repeat：平铺*/
+            /*stretch: 拉伸 */
+            /*round :自动计算 在平铺*/
+            border-image-repeat: round;
+
+            border-image-outset: 27px;
+
+           
+        }
+
+    </style>
+</head>
+<body>
+<img src="images/border.png" alt=""/>
+    <div class="box">
+            adfadfadsf
+    </div>
+</body>
+</html>

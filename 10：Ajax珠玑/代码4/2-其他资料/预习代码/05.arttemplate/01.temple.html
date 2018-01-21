@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/template-native.js'></script>
+	<script type="text/template" id='template01'>
+		<tr>
+			<td><%=name%></td>
+			<td><%=skill%></td>
+			<td><%=wife%></td>
+			<td>
+				<% for(var i=0;i<friends.length;i++){ %>
+				<a><%=friends[i]%></a>
+				<% }%>
+			</td>
+		</tr>
+	</script>
+	<script type="text/template" id='templatetrext'>
+	<!-- 当我们传入了 对象之后 相当于 解析为 如下 的效果 -->
+		<tr>
+			<td><%=person.name%></td>
+			<td><%=person.skill%></td>
+			<td><%=person.wife%></td>
+			<td>
+				<% for(var i=0;i<person.friends.length;i++){ %>
+				<a><%=person.friends[i]%></a>
+				<% }%>
+			</td>
+		</tr>
+	</script>
+	<script type="text/javascript">
+		// 定义对象
+		/*
+			模板引擎 
+			只能够传入 一个 js对象
+			 不能 传入 js数组
+
+		 */ 
+		var person = {
+			name:"黑崎一护",
+			skill:"卍解",
+			wife:"未婚",
+			friends:[
+				'露琪亚','皮卡丘','妙蛙种子','张小凡'
+			]
+		};
+		// 调用 template方法
+		// 参数1模板标签的 id  参数2 对象
+		var str = template("template01",person);
+		console.log(str);	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

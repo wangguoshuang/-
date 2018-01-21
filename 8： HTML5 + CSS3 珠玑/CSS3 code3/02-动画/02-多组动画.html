@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+            /* 调用动画*/
+            /*
+                动画反向： alternate;
+                无线循环： infinite;
+            */
+
+            animation:  move 4s linear alternate 3;
+        }
+
+        /* 定义动画*/
+        /* 使用百分比 可以实现 动画连续执行*/
+        @keyframes move {
+            0%{
+
+              }
+
+            25%{
+                transform:translateX(500px);
+                background-color: red;
+            }
+
+            50%{
+                transform:translateX(500px) translateY(400px);
+                background-color: green;
+            }
+
+            75%{
+                transform:translateX(0px) translateY(400px);
+                background-color: pink;
+            }
+
+            100%{
+                transform:translateX(0px) translateY(0px);
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

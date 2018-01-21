@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text"/>
+    <button>localStroage设置</button>
+    <button>localStroage获取</button>
+    <button>localStroage更新</button>
+    <button>localStroage删除</button>
+    <button>localStroage更新</button>
+
+
+    <script>
+        var txt=document.querySelector('input');
+
+        var btns=document.querySelectorAll('button');
+
+        btns[0].onclick=function(){
+            localStorage.setItem('userName',txt.value);
+        }
+
+
+        btns[1].onclick=function(){
+            txt.value=localStorage.getItem('userName');
+        }
+
+        btns[2].onclick=function(){
+           localStorage.setItem('userName',txt.value);
+        }
+
+        btns[3].onclick=function(){
+            localStorage.removeItem('userName');
+        }
+
+        btns[4].onclick=function(){
+            localStorage.clear();
+        }
+
+
+
+    </script>
+</body>
+</html>

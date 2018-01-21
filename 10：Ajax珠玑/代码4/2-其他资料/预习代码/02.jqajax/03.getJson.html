@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <script type="text/javascript" src='js/jquery.min.js'></script>
+          <script type="text/javascript">
+          $(function() {
+                    // 绑定点击事件
+                    $("#jqAjax").on('click', function() {
+                    	// 调用的是 getJSON  jq内部 会将 返回的 json字符串 转化为 js对象
+                             $.getJSON('03.getJson.php',function(data){
+			             console.log(data);
+                             	console.log(data.name);
+                             	console.log(data.skill);
+                             	console.log(data.boy);
+                             })
+                    })
+          })
+          </script>
+</head>
+
+<body>
+<h1>jq_获取json数据</h1>
+          <input type="button" value="jq_获取json数据" id='jqAjax'>
+</body>
+
+</html>

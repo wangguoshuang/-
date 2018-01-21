@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button"  value="发送ajax请求" id='sendAjax'>
+</body>
+</html>
+<script type="text/javascript">
+	document.querySelector('#sendAjax').onclick = function () {
+		var ajax = new XMLHttpRequest();
+
+		ajax.open('get','01.ajax.php');
+
+		ajax.send();
+
+		ajax.onreadystatechange = function () {
+			if (ajax.readyState==4&&ajax.status ==200) {
+				// 该属性 如果 服务端返回的不是 xml 并且 php中 header中没有设置为xml 是没有值的
+				// console.log(ajax.responseXML);
+				console.log(ajax.responseText);
+			}
+		}
+	}
+</script>

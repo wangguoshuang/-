@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <script type="text/javascript" src='js/jquery.min.js'></script>
+          <script type="text/javascript">
+          $(function() {
+                    // 绑定点击事件
+                    $("#jqAjax").on('click', function() {
+                              // 发送的是 post请求
+                            $.post('02.jq_post.php',{name:'rose',age:19},function(data){
+                                   console.log(data);
+                            });
+                    })
+          })
+          </script>
+</head>
+
+<body>
+<h1>jq_发送post请求</h1>
+          <input type="button" value="jq_发送post请求" id='jqAjax'>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /* 伪类：
+            ：link   ：hover  :active  :visited
+            伪类的特点：以 ：开头
+        */
+        .box{
+            width: 600px;
+            height: 430px;
+            margin:100px auto;
+        }
+
+        .box div{
+            width: 80px;
+            height: 80px;
+            border: 1px solid #333;
+            text-align: center;
+            line-height: 80px;
+            color:#666;
+            float: left;
+            font-size:24px;
+            margin-top:-1px;
+            margin-left:-1px;
+        }
+
+        /* 伪类选择器
+            : 标志性符号
+
+        */
+
+        /* 选中 box 下面的div 第父盒子 中的第一个子元素*/
+        /*.box div:first-child{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选中 box 下面的div 第父盒子 中的最后一个子元素*/
+
+        /*.box div:last-child{*/
+            /*background-color: red;*/
+        /*}*/
+
+        /*选中box下的第18个盒子 */
+        /* :nth-child(n) n是也给整数 从1开始  1，2,3,4,5....
+            如果n小于等于0 无效  n ：正整数+0
+        */
+
+        /*.box div:nth-child(28){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 选中所有的box 下的div*/
+        /*.box div:nth-child(n){*/
+            /*background-color: pink;*/
+        /*}*/
+        
+        /* 2n 选中所有的偶数*/
+        /*.box div:nth-child(2n){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 2n-1 奇数*/
+        /*.box div:nth-child(2n+1){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /* 奇数：odd  偶数：even*/
+
+        /*.box div:nth-child(odd){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /*.box div:nth-child(even){*/
+            /*background-color: yellow;*/
+        /*}*/
+
+        /* 选中7的倍数+1 */
+        /*.box div:nth-child(7n+1){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /*选中前5个*/
+        /*.box div:nth-child(-n+5){*/
+            /*background-color: red;*/
+        /*}*/
+
+        /*选中后5个*/
+        /* nth-last-child 从最后面开始选*/
+        .box div:nth-last-child(-n+5){
+            background-color: red;
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+        <div>32</div>
+        <div>33</div>
+        <div>34</div>
+        <div>35</div>
+    </div>
+</body>
+</html>

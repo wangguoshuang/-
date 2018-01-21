@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>basic-demo</title>
+<!-- 导入 模板引擎 -->
+<script src="js/template-native.js"></script>
+</head>
+
+<body>
+<div id="content"></div>
+<!-- 定义模板 -->
+<script id="test" type="text/html">
+<h1><%=title%></h1>
+<ul>
+    <% for (var i = 0; i < list.length; i ++) { %>
+        <li>索引 <%= i + 1 %> ：<%= list[i] %></li>
+    <% } %>
+</ul>
+</script>
+
+<script>
+// 定义对象
+var data = {
+	title: '基本例子',
+	isAdmin: true,
+	list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+};
+// 调用 模板引擎 提供的方法
+/*
+	参数1:模板的id
+	参数2:对象(注意 是对象)
+*/ 
+var html = template('test', data);
+
+//  找到 并替换
+document.getElementById('content').innerHTML = html;
+</script>
+</body>
+</html>

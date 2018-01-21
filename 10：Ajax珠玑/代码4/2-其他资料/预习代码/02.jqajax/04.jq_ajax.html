@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <script type="text/javascript" src='js/jquery.min.js'></script>
+          <script type="text/javascript">
+          $(function() {
+                    // 绑定点击事件
+                    $("#jqAjax").on('click', function() {
+                          // 调用 jq的 ajax方法    
+                          $.ajax({
+                            type:'get',
+                            url:'04.jq_ajax.php',
+                            data:{name:'jack',age:20},
+                            dataType:'json',
+                            success:function(ajaxData){
+                                console.log(ajaxData);
+                            },
+                            error:function(){
+                              console.log('请求出错');
+                            },
+                            beforeSend:function(){
+                              // 验证数据的 准确性
+                              console.log('发送之前会调用');
+                              // 可以通过 return false 来组织 ajax 请求
+                              // return false;
+                            }
+                          });
+                    })
+          })
+          </script>
+</head>
+
+<body>
+<h1>jq的ajax方法</h1>
+          <input type="button" value="jq_的ajax方法" id='jqAjax'>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="mainApp">
+  <div ng-controller="ParentCtrl">                <!--父级-->
+    <div ng-controller="SelfCtrl">              <!--自己-->
+        <a ng-click="click()">click me</a>
+        <div ng-controller="ChildCtrl"></div>   <!--子级-->
+    </div>
+    <div ng-controller="BroCtrl"></div>         <!--平级-->
+</div>
+</div>
+<!--这是错误的做法-->
+<!--<div ng-controller="myCtrl2">-->
+    <!--{{name}}-->
+<!--</div>-->
+</body>
+<script src="./angular.js"></script>
+<script>
+    //创建模块和控制器
+    //angular中的多模块开发不是多个模块再去使用多个ng-app
+    //angular的多模块开发正确方式
+    //1.确定主模块
+    //2.其他的子模块，添加到主模块的中括号中
+    //3.那么子模块就可以使用了
+   var app=angular.module('mainApp',[]);
+   app.controller('SelfCtrl', function($scope) {
+	$scope.click = function () {
+
+        //$broadcast广播to-child事件的名称
+		$scope.$broadcast('to-child', 'child');
+		//$emit事件发射器to-parent是事件的名称  parent是传的内容
+		$scope.$emit('to-parent', 'parent');
+	}
+   });
+
+   app.controller('ParentCtrl', function($scope) {
+	$scope.$on('to-parent', function(event,data) {
+		 //console.log(data);
+		console.log('ParentCtrl', data);
+
+
+		
+			   //父级能得到值
+	});
+	$scope.$on('to-child', function(event,data) {
+		console.log('ParentCtrl', data);	   //子级得不到值
+	});
+    });
+
+app.controller('ChildCtrl', function($scope){
+	$scope.$on('to-child', function(event,data) {
+		//console.log(data);
+		console.log('ChildCtrl', data);		 //子级能得到值
+	});
+	$scope.$on('to-parent', function(event,data) {
+		console.log('ChildCtrl', data);		 //父级得不到值
+	});
+});
+
+app.controller('BroCtrl', function($scope){  
+	$scope.$on('to-parent', function(event,data) {  
+		console.log('BroCtrl', data);		  //平级得不到值  
+	});  
+	$scope.$on('to-child', function(event,data) {  
+		console.log('BroCtrl', data);		  //平级得不到值  
+	});  
+});
+    </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <p ng-bind="time"></p>
+    <h2 ng-bind="time2"></h2>
+</body>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope,$interval) {
+        $scope.time=new Date();
+        $scope.time2=new Date();
+             setInterval(function () {
+                 $scope.time=new Date();
+                 //console.log($scope.time);
+                 $scope.$apply();//告诉angular进行数据更新
+              },1000)
+        //但是如果说使用 $interval这种angular的服务有时候服务内部就帮我们完成了这种数据更新
+                // $interval(function () {
+                //     $scope.time2=new Date();
+                // },1000)
+    })
+</script>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "description": "计算器模块",
+  "main": "index.js",
+  "keywords": [
+  ],
+  "author": "you",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KingNigel/calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KingNigel/calculator/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+   
+  },
+  "dependencies": {
+  
+  }
+}

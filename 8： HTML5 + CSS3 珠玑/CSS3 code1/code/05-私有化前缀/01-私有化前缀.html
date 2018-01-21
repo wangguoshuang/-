@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 1100px;
+            height: 200px;
+            border: 1px solid #000;
+            margin:100px auto;
+
+            /* 背景渐变*/
+            /*
+                -webkit-： chrome  safari  谷歌(webkit内核的) 苹果
+                -moz-：火狐
+                -ms-:ie
+                -o-:　欧朋
+            */
+
+            background: -ms-linear-gradient(left,red 0%, green 100%);
+            background: -webkit-linear-gradient(left,red 0%, yellow 50%, green 100%);
+            background: -moz-linear-gradient(left,red 0%, green 100%);
+            background: -o-linear-gradient(left,red 0%, green 100%);
+            background: linear-gradient(left,red 0%, green 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

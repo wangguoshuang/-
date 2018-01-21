@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .layout{
+            width: 800px;
+            height: 1000px;
+            border: 1px solid #000;
+            margin:0 auto;
+
+            /* 添加伸缩布局的属性*/
+            display: flex;
+            /* 主轴方向垂直*/
+            flex-direction: column;
+        }
+
+        header{
+            background-color: pink;
+            flex:1;
+        }
+        main{
+            background-color: green;
+            flex:7;
+            display: flex;
+        }
+
+        aside{
+            flex: 1;
+            background-color: red;
+        }
+
+        article{
+            flex: 4;
+            background-color: yellow;
+        }
+
+        footer{
+            background-color: #000;
+            flex:1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <header></header>
+        <main>
+            <aside></aside>
+            <article></article>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

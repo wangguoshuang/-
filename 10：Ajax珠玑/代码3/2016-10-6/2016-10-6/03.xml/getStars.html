@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		table{
+			margin: 100px auto;
+			width: 400px;
+		}
+		td{
+			border: 1px solid #0094ff;
+		}
+	</style>
+</head>
+<body>
+	<h1>ajax获取 多个明星数据</h1>
+	<input type="button"  value="获取男神们?" id='getStars'>
+</body>
+</html>
+<script type="text/javascript">
+	// 绑定点击事件
+	document.querySelector('#getStars').onclick = function () {
+		var ajax = new XMLHttpRequest();
+
+		// post
+		ajax.open('post','getStars.php');
+
+		// 设置 请求的报文
+		ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+		// 发送
+		ajax.send();
+
+		// 注册事件
+		ajax.onreadystatechange = function () {
+			if (ajax.readyState==4 && ajax.status==200) {
+				// 知道返回的是 xml
+				console.log(ajax.responseXML);
+
+				// document对象哦
+				var persons = ajax.responseXML.querySelectorAll('person');
+				console.log(persons);	
+
+				// 在循环之前 把table的 拼出来
+
+				var str ='';
+
+				// <table>
+				str+='<table>';
+
+				// 循环 获取其中的某一个
+				for (var i = 0; i < persons.length; i++) {
+					// 获取 当前循环的那个person标签对象
+					 var currentPerson =  persons[i];
+
+					 // 获取 其中的 每一个值
+					 console.log(currentPerson.querySelector('name').innerHTML);
+					 console.log(currentPerson.querySelector('path').innerHTML);
+					 console.log(currentPerson.querySelector('skill').innerHTML);
+
+					 // 方法1 创建一个 table
+					 /* js创建dom元素 再添加 比较繁琐 
+					 	document.createElement('table').appendChild();
+						 document.createElement('tr');
+						 document.createElement('td');
+					 */
+
+					 // 直接 拼接出 一个 table的 字符串 然后 设置到页面上即可
+
+					 // 拼接开头
+					 str+='<tr>';
+
+					 str+='<td>'+currentPerson.querySelector('name').innerHTML+'</td>';
+					 // 这里需要添加的是图片
+					 // str+='<td>'+currentPerson.querySelector('path').innerHTML+'</td>';
+					 str+='<td><img src="'+currentPerson.querySelector('path').innerHTML+'"></td>';
+					 str+='<td>'+currentPerson.querySelector('skill').innerHTML+'</td>';
+
+					 // 再次添加一个td
+					  str+='<td><a href="#">点击了解更多_'+currentPerson.querySelector('name').innerHTML+'</a></td>';
+
+					 // 拼接结尾
+					 str+='</tr>';
+				
+				}
+
+				// 循环完毕以后 将table 合并
+				// </table>
+				str+='</table>';
+
+				// 测试 拼接的 内容 是否正确
+				console.log(str);
+
+				// 直接 添加到页面上
+				document.body.innerHTML = str;
+			}
+		}
+	}
+</script>

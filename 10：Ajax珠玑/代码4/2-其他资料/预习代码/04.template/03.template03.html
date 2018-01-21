@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script type="text/javascript">
+var person = {
+          name: '葫芦娃',
+          brotherNum: 6,
+          grandfather: '爷爷'
+};
+
+var templateStr = "我的名字是:<%=name%>,我有:<%=brotherNum%>个兄弟,我爷爷的名字是:<%=grandfather%>";
+
+// 定义正则
+var reg = /<%=\s*([^%>]+\S)\s*%>/;
+
+// 匹配
+var result = reg.exec(template);
+// 匹配的 文本
+var matchString = result[0];
+// 匹配的 =号 之后的 字母
+var matchWord = result[1];
+
+// 使用 字符串的replace 进行替换
+// template = template.replace(matchString, person[matchWord]);
+console.log(template);
+
+function template(templateStr,obj) {
+	// 正则表达式
+          var reg = /<%=\s*([^%>]+\S)\s*%>/;
+
+          // 匹配
+          var result;
+         while(result = reg.exec(templateStr)){
+          // 匹配的 文本
+          var matchString = result[0];
+          // 匹配的 =号 之后的 字母
+          var matchWord = result[1];
+          // 使用 字符串的replace 进行替换
+          templateStr = templateStr.replace(matchString, obj[matchWord]);
+         }
+         return templateStr;
+}
+
+template(templateStr,person);
+</script>

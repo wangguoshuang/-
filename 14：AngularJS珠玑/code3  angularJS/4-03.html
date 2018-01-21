@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 数据绑定</title>
+</head>
+<body>
+
+	<div ng-controller="DemoController" ng-init="name='itcast';age=10">
+		<h1>{{name}}</h1>
+		<h2>{{age}}</h2>
+	</div>
+
+	<script src="./libs/angular.min.js"></script>
+	<script>
+
+		var App = angular.module('App', []);
+
+		App.controller('DemoController', ['$scope', function ($scope){
+
+			// $scope.name = '';
+
+		}])
+	</script>
+</body>
+</html>

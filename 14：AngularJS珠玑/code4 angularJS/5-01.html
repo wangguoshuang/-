@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域</title>
+</head>
+<body ng-app="App" ng-init="name='康熙'">
+	
+	<div class="box" ng-controller="ParentController">
+		
+		<nav>
+			<a href="javascript:;">首页</a>
+			<a href="javascript:;">列表</a>
+		</nav>
+
+		<div class="main" ng-controller="ChildController">
+			<h4>{{name}}</h4>
+		</div>
+
+	</div>
+
+
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		
+		var App = angular.module('App', []);
+
+		App.controller('ParentController', ['$scope', function ($scope) {
+
+			$scope.name = '雍正';
+
+		}]);
+
+		App.controller('ChildController', ['$scope', function ($scope) {
+
+			// $scope.name = '乾隆';
+
+		}]);
+
+	</script>
+
+
+	<script>
+		
+		// var a = 10;
+
+		// function fn() {
+
+		// 	var a = 15;
+
+		// 	function bar() {
+
+		// 		alert(a);
+		// 	}
+
+		// 	alert(a);
+
+		// }
+
+		// fn();
+
+
+		// 新建一个函数就会产生一个新的作用域
+		// 并且子作用域可以访问父级作用域，父级不
+		// 能访问子级的
+	</script>
+</body>
+</html>

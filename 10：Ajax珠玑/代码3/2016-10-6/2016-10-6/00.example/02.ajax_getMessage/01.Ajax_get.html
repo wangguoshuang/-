@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="UTF-8">
+            <title>Document</title>
+</head>
+
+<body>
+            <h1>ajax获取数据</h1>
+            <input type="button" id='getInfo' value='获取数据'>
+</body>
+
+</html>
+<script type="text/javascript">
+// event 事件参数 浏览器 在调用 dom元素的 事件时 会传入一个参数 这里面有 一些浏览器信息,比如宽高,鼠标位置等
+document.querySelector('#getInfo').onclick = function(event) {
+            // 1.创建
+            var ajax = new XMLHttpRequest();
+
+            // 2设置
+            ajax.open('get', '01.Ajax_get.php');
+
+            // 3.发送
+            ajax.send();
+
+            // 4.状态事件
+            ajax.onreadystatechange = function() {
+                        if (ajax.readyState == 4 && ajax.status == 200) {
+                                    // 5.使用返回的数据 修改页面的内容
+                                    // responseText 返回的就是一个 字符串
+                                    // 我们 在ajax 中 如果 是通过 ajax.responseText 获取到的 统统都是字符串
+                                    console.log(ajax.responseText);
+                        }
+            }
+}
+
+</script>

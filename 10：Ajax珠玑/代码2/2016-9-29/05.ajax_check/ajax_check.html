@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>淘宝宝注册页面</h1>
+	<!-- ajax 发送get请求 key 是自己写的 所以name属性 在这里是可选的 -->
+	<input type="text"   placeholder="请输入用户名" id='userText'>
+</body>
+</html>
+<script type="text/javascript">
+	// 绑定失去焦点事件
+	document.querySelector('#userText').onblur = function () {
+		// console.log('失去焦点啦');
+
+		// 发送ajax请求 去到服务器
+
+		// 异步对象
+		var ajaxObj = new XMLHttpRequest();
+
+		// 设置url 方法
+		// this 就是当前这个 文本框
+		ajaxObj.open('get','ajax_check.php?userName='+this.value);
+
+		// 发送请求
+		ajaxObj.send();
+
+		// 注册状态改变事件
+		ajaxObj.onreadystatechange = function () {
+			if (ajaxObj.readyState==4&&ajaxObj.status==200) {
+				// 打印返回的内容
+				console.log(ajaxObj.responseText);
+				if (ajaxObj.responseText=='have') {
+					alert('已注册的用户名(⊙o⊙)');
+				}else{
+					alert('你真的可以使用这个名字哦');
+				}
+			}
+		}
+	}
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 自定义指令</title>
+</head>
+<body ng-app="App">
+	
+	<!-- <div tag></div> -->
+
+	<!-- 元素 -->
+	<!-- <tag></tag> -->
+
+	<!-- <div class="tag"></div> -->
+
+	<!-- directive:tag -->
+
+
+	<script src="./libs/angular.min.js"></script>
+	<script>
+
+		var App = angular.module('App', []);
+
+		// 通过模块实例对象的directive方法可以自定义指令
+		App.directive('tag', function () {
+
+			// 返回一个对象，这个对象就是自定义指令相关的内容
+			return {
+				// E element
+				// A attribute
+				// C class
+				// M mark replace 必须为true
+				restrict: 'ECMA',
+				// template: '<ul><li>首页</li><li>列表</li></ul>',
+				templateUrl: './list.html',
+				// replace: true
+			}
+
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .music-box{
+            width: 300px;
+            height: 300px;
+
+            margin:50px auto;
+            position: relative;
+        }
+
+        .music-box::before,.music-box::after{
+            width: 100%;
+            height: 100%;
+            content:"";
+            position: absolute;
+            left:0;
+            top:0;
+            background-color: red;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+
+            background: url(images/musicb.jpg) no-repeat;
+
+        }
+
+        .music-box::after{
+            background-color: blue;
+            /* 设置变换原点为 bottom*/
+            transform-origin: bottom;
+            /* 添加过渡*/
+            transition:all 1s;
+            background: url(images/musict.jpg) no-repeat;
+
+        }
+
+        .music-box:hover::after{
+            /* 绕x轴旋转*/
+            transform:rotateX(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="music-box">
+
+    </div>
+</body>
+</html>

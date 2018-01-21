@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02命名空间</title>
+    <script type="text/javascript">
+    //命名空间法是通过，约定的方式定义的
+    //是可以解决命名冲突问题的，但是很牵强
+    //驼峰命名，匈牙利命名法
+    //没法做私有性封装
+     var calculator={
+        a:123;
+     }
+      calculator.add=function(v1,v2){
+    
+        return v1+v2;
+       }
+      calculator.substract=function(v1,v2){
+        return v1-v2;
+       }
+      calculator.mutiply=function(v1,v2){
+        return v1*v2;
+       }
+      calculator.divide=function(v1,v2){
+        return v1/v2;
+       }
+
+    calculator.a=123;
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

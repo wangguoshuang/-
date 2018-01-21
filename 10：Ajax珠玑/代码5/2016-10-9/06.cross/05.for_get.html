@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1>一直发送请求</h1>
+	<input type="button" id='getFor' value="一直发请求">
+</body>
+</html>
+<!-- 导入jq -->
+<script type="text/javascript" src='jquery.min.js'></script>
+
+<!-- 自己的逻辑 -->
+<script type="text/javascript">
+	$(function () {
+		$('#getFor').click(function () {
+			for (var i = 0; i < 1000; i++) {
+				$.ajax({
+					url:'http://192.168.141.137/2016-10-9/06.cross/05.for_get.php'
+				})
+			}
+		})
+	})
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//将6以外的1-10数字打印到控制台
+	// for(var n1=1; n1<=10; n1++){
+	// 	if(n1==6){
+	// 		continue;
+	// 	}else{
+	// 		console.log(n1);
+	// 	}
+	// }
+	// 请将1到100之间所有数字输出，排除是3的倍数的数字
+	// for(var i=1; i<=100; i++){
+	// 	if(i%3==0){
+	// 		continue;
+	// 	}else{
+	// 		console.log(i);
+	// 	}
+	// }
+	//接收用户输入的用户名和密码，如果用户名不是admin或者密码不是888，就一直提示用户重新输入，如果用户名和密码都正确，那么程序立马停止（使用while循环做）
+	var username=prompt("请输入用户名");
+	var pwd=prompt("请输入密码");
+	while(username!="admin" || pwd!="888"){
+		username=prompt("请输入用户名");
+		pwd=prompt("请输入密码");
+	}
+	alert("登录成功");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

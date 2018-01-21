@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单属性</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+		form {
+			max-width: 640px;
+			width: 100%;
+			margin: 32px auto 0;
+			font-size: 32px;
+		}
+		label {
+			display: block;
+			margin: 30px;
+		}
+		input {
+			display: block;
+			width: 100%;
+			height: 32px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<form action=""  id="form" >
+		<fieldset>
+			<legend>表单属性</legend>
+			<label for="">
+				autofocus: <input type="text" autocomplete="on" name="autofocus" autofocus required>
+			</label>
+			<label for="">
+				placeholder: <input type="text" pattern="\D+" placeholder="这是一个占位符" novalidate>
+			</label>
+			<label for="">
+				multiple: <input type="file" multiple>
+			</label>
+			<input type="submit" value="提交">
+		</fieldset>
+	</form>
+	<label for="">
+		表单外的一个元素：
+		<input type="text" name="outer" form="form">
+	</label>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+	{
+		"name":"小丹丹",
+		"skill":"money",
+		"path":"images/nvshen.jpg"
+	},
+	{
+		"name":"贾玲",
+		"skill":"laugh",
+		"path":"images/jl.jpg"
+	},
+	{
+		"name":"刘涛",
+		"skill":"美美哒",
+		"path":"images/lt.jpg"
+	}
+]

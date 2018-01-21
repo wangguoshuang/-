@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <style type="text/css">
+          h1 {
+                    text-align: center;
+          }
+          
+          .showBox {
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid #0094ff;
+                    margin: 100px auto 20px;
+          }
+          
+          .btnBox {
+                    text-align: center;
+          }
+          
+          .btnBox input {
+                    margin: 0px 20px;
+                    border-width: 0px;
+                    height: 20px;
+                    width: 80px;
+                    background: skyblue;
+                    color: white;
+          }
+          </style>
+</head>
+
+<body>
+          <h1>ajax切换明星头像</h1>
+          <div class='showBox'>
+          </div>
+          <div class="btnBox">
+                    <input type="button" class='starBtn' value='海贼王'  data-star='onePiece'>
+                    <input type="button" class='starBtn' value='李彦宏' data-star='lyh'>
+                    <input type="button" class='starBtn' value='马云' data-star='my'>
+          </div>
+</body>
+
+</html>
+<script type="text/javascript">
+
+
+// 返回的是 数组
+var btns = document.querySelectorAll('.starBtn');
+
+// 循环绑定点击事件
+for (var i = 0; i < btns.length; i++) {
+          // 绑定点击事件
+          btns[i].onclick = function(event) {
+          	//1 创建
+          	var xmlOBj = new XMLHttpRequest();
+
+          	//2 设置
+          	xmlOBj.open('post','changeStar.php');
+
+          	xmlOBj.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+          	//3 发送
+          	//获取 自定义的 data-star属性 this 就是 当前 按钮
+	// console.log(this.dataset['star']);      	
+
+	// 拼接字符串
+          	xmlOBj.send('starName='+this.dataset['star']);
+
+          	// 4.绑定事件
+          	xmlOBj.onreadystatechange = function () {
+          		if (xmlOBj.readyState == 4 && xmlOBj.status == 200) {
+          			//数据才是正确的
+          			// xmlOBj.responseText;
+          			console.log(xmlOBj.responseText);
+
+          			// 更新页面
+          			// 获取元素  设置 background属性即可
+          			document.querySelector('.showBox').style.background = "url("+xmlOBj.responseText+") no-repeat center/200px 200px";
+          		}
+          	}
+          }
+}
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button"  value="测试工具函数" id='ajaxTool'>
+
+	<!-- 多选并修改 -->
+	<ul>
+		<li>我爱广州小蛮腰1</li>
+		<li>我爱广州小蛮腰2</li>
+		<li>我爱广州小蛮腰3</li>
+		<li>我爱广州小蛮腰4</li>
+		<li>我爱广州小蛮腰5</li>
+		<li>我爱广州小蛮腰6</li>
+		<li>我爱广州小蛮腰7</li>
+		<li>我爱广州小蛮腰8</li>
+		<li>我爱广州小蛮腰9</li>
+		<li>我爱广州小蛮腰10</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript" src='js/ajax_tool.js'></script>
+<script type="text/javascript">
+	document.querySelector("#ajaxTool").onclick = function () {
+		// ajax_tool(url,data,method,success)
+		// ajax_tool('01.ajax.php',undefined,'get',function(data){
+		// 	console.log(data);
+		// })
+
+		// 测试 工具函数 只接收一个参数的
+		// 好处 参数的 顺序 可以任意的改变
+		ajax_tool_pro({
+			method:"get",
+			success:function(data){
+				console.log(data);
+			},
+			data:undefined,
+			url:"01.ajax.php"
+		})
+
+		
+
+	}
+</script>

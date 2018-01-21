@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 数据绑定</title>
+</head>
+<body ng-app="App">
+    
+    <ul ng-controller="DemoController">
+        <li ng-bind="name"></li>
+        <li ng-cloak>{{name}}{{age}}</li>
+        <li ng-bind-template="{{name}}{{age}}"></li>
+    </ul>
+
+    <script src="./libs/angular.min.js"></script>
+    <script>
+        
+        var App = angular.module('App', []);
+
+        App.controller('DemoController', ['$scope', function ($scope) {
+
+            // $scope 就是Model
+
+            $scope.name = 'itcast';
+
+            $scope.age = 10;
+
+        }]);
+
+    </script>
+</body>
+</html>

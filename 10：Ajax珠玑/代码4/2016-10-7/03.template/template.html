@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	var str = '我是一匹来自北方的狼,我爱吃的食物是草';
+	var str2 = '我是一匹来自北方的哈士奇,我爱吃的食物是狗粮';
+
+	// 挖坑
+	var str3 = '我是一匹来自北方的name,我爱吃的食物是food';
+
+	// 用正则 获取name
+	// 两个 // 可以快速 定义正则对象 /正则的规则/
+	var reg = /name/;
+	var reg2 = /food/;
+
+	// 查找 name
+	var result = reg.exec(str3);
+	// console.log(result);
+
+	// 查找food
+	var result2 = reg2.exec(str3);
+	// console.log(result2);
+
+	// 问题1 现在的正则 是十分单一的 想要变为一个 通用型的正则
+
+	// 
+</script>
+
+<script type="text/javascript">
+	// 优化 正则 为一个通用的正则 
+	// 查找 至少一个字母
+	var reg3  = /\w+/;
+
+	// 挖好坑的 字符串
+	var str3 = '我是一匹来自北方的name,我爱吃的食物是food';
+
+	// 准备一个对象 用来填坑
+	var obj ={
+		name:"秋田",
+		food:"hotdog"
+	};
+
+	// 检索字符串
+	// 是一个数组 只有一个元素  先匹配到name
+	var result3 = reg3.exec(str3);
+
+	// 获取 匹配到的 值
+	var keyName = result3[0];
+	console.log(keyName);
+
+	// 通过keyName  在对象中 获取 对应的 值
+	var value = obj[keyName];
+	console.log(value);
+
+	// 替换 挖好坑的 字符串中的 name 为秋田
+	/*
+		replace方法
+			参数1:想要替换的内容
+			参数2:替换为什么
+	*/
+	console.log('替换之前'+str3);
+	str3 = str3.replace(keyName,value);
+	console.log('替换之后'+str3);
+	
+</script>

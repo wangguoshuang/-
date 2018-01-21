@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS 指令</title>
+	<!-- <link rel="stylesheet" ng-href="{{link}}"> -->
+	<style>
+		.red {
+			color: red;
+		}
+
+		.blue {
+			color: blue;
+		}
+	</style>
+</head>
+<body ng-app="App">
+	
+	<ul ng-controller="DemoController">
+		<li ng-bind="name"></li>
+		<li>{{name}}</li>
+		<li ng-show="1">ng-show用来显示或隐藏内容的，当值为true时显示</li>
+		<li ng-hide="0">ng-hide用来显示或隐藏内容的，当值为true时隐藏</li>
+		<li ng-if="1">ng-if用来控制元素是否存在，当值为true时存在</li>
+		<li><img ng-src="{{path}}" alt=""></li>
+		<li ng-class="{red: true, blue: true}">ng-class指令</li>
+		<li><input type="text" ng-disabled="0"></li>
+		<li><input type="text" ng-readonly="1" value="angular"></li>
+		<li><input type="checkbox" ng-checked="1">男</li>
+		<li>
+			<select name="" id="">
+				<option value="">河北省</option>
+				<option value="">山东省</option>
+				<option value="" ng-selected="1">北京市</option>
+			</select>
+		</li>
+	</ul>
+	
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		
+		// 创建模块
+		var App = angular.module('App', []);
+
+		App.controller('DemoController', ['$scope', function ($scope) {
+
+			// $scope
+
+			$scope.name = 'itcast';
+
+			$scope.path = './images/author.jpg';
+
+			$scope.link = './main.css';
+
+		}]);
+
+	</script>
+</body>
+</html>

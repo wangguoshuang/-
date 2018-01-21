@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*
+         div：标签选择器
+         .box:类选择器
+         #box:id选择器
+         div p：后代选择器
+         div.active: 标签指定选择器
+         div,p,span：并集选择器
+         div>span： 子代选择器
+         div~p: 选中div 后面所有的同级p标签
+         div+p: 选择div后面的第一个同级的p标签
+        */
+        div div{
+            background-color: blue;
+        }
+        p~div{
+            background-color: red;
+            margin-top:5px;
+        }
+
+        /*p+div{*/
+            /*background-color: red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div>2</div>
+    <p>ppp</p>
+    <div>1
+        <div>inner</div>
+    </div>
+
+    <div>3</div>
+    <div>4</div>
+</body>
+</html>

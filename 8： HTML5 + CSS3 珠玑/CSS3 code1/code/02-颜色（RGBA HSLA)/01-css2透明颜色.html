@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .out{
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            margin:100px auto;
+            border: 1px solid #000;
+            /* 设置半透明*/
+            opacity:0.5;
+
+        }
+
+        .in{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin:100px auto;
+            /*当父盒子设置了透明度，再给子盒子设置透明度是不管用的*/
+            opacity: 1;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+</html>

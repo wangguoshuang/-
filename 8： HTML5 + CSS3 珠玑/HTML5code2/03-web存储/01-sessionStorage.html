@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" class="txt"/>
+    <button>sessionStorage存储数据</button>
+    <button>sessionStorage获取数据</button>
+    <button>sessionStorage更新数据</button>
+    <button>sessionStorage删除数据</button>
+    <button>sessionStorage清空数据</button>
+</body>
+</html>
+<script>
+    /*
+    *  H5
+    *  sessionStorage    5M   存在内存中   关闭当前页面，数据销毁
+    *
+    *
+    * localStorage   20M   存储在硬盘上   断电不丢失 ，多个页面可以共享
+    * */
+
+//    获取需要用到的标签
+    var txt=document.querySelector('.txt');
+    var btns=document.querySelectorAll('button');
+
+//    存储数据
+    btns[0].onclick=function(){
+//        将 文本框中的值存储到sessionStorage里面
+        window.sessionStorage.setItem('userName',txt.value);
+        window.sessionStorage.setItem('pwd','123456');
+        window.sessionStorage.setItem('sex','NaN');
+        alert('存储成功！');
+    }
+
+//    获取数据
+    btns[1].onclick=function(){
+//        吧获取的用户名放入到文本框
+       txt.value= window.sessionStorage.getItem('userName');
+    }
+
+//    更新数据
+//     如果给已经有的key赋值，将覆盖之前的值
+    btns[2].onclick=function(){
+        window.sessionStorage.setItem('userName','lisi');
+    }
+
+//    删除数据
+    btns[3].onclick=function(){
+//         一次删除一个数据
+        window.sessionStorage.removeItem('userName');
+    }
+
+//    清空所有的数据
+    btns[4].onclick=function(){
+        window.sessionStorage.clear();
+    }
+
+</script>

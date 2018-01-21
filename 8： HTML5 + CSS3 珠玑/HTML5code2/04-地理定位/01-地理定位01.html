@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+//    window.navigator  H5所提供的 获取用户地理信息API
+//    判断当前设备是否支持地理定位
+    if(window.navigator.geolocation){
+//        获取用户地理信息的方法
+//         navigator导航　　　geolocation: 地理定位
+//         getCurrentPosition( 获取位置成功后的回调函数，获取位置失败后的回调函数)；
+        navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
+    }else{
+        console.log('你的设备不支持地理定位！');
+    }
+//     成功
+    function successCallback(position){
+        console.log('获取地理位置成功！')
+//         当获取地理位置成功后，会返回一个position对象， 放的是地理位置信息
+//           获取维度
+            var wd=position.coords.latitude;
+//           获取到我们的经度
+             var jd=position.coords.longitude;
+        var myDate = new Date();
+        console.log(myDate.toLocaleString());
+
+            console.log(wd+"------"+jd);
+
+
+//        谷歌地图：40.0588122753,116.3364929142
+//        百度地图：40.0644820000,116.3431170000
+//        腾讯高德：40.0588240852,116.3365136700
+    }
+// 失败
+    function errorCallback(error){
+        console.log('获取地理位置失败！');
+//        输出错误对象
+        console.log(error);
+    }
+
+
+
+
+</script>

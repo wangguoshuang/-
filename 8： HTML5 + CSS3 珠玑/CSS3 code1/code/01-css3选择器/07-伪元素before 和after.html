@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    /*
+        伪元素： 伪  假的   元素：标签
+        通过css样式模拟出 标签的效果
+
+        css2 没有 伪元素的概念，只有伪类
+            E:before  E:after  是伪类
+        css3: 伪元素
+            E::before
+            E::after
+
+            必须有 content:"";
+
+    */
+        span{
+            color:red;
+            font-size:30px;
+        }
+
+        span::before{
+            content:"今天";
+            color:green;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        span::after{
+            content:"真好！";
+            color:pink;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+   <span>天气</span>
+</body>
+</html>

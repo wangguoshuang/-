@@ -1,0 +1,21 @@
+{
+  "name": "06require2",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+  ],
+  "author": "KingNigel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KingNigel/test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KingNigel/test/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

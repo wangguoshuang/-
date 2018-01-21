@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button"  value="测试get" id='ajax_get'>
+</body>
+</html>
+<!-- 导入 封装的js -->
+<script type="text/javascript" src='ajax_tool.js'></script>
+<script type="text/javascript">
+	document.querySelector('#ajax_get').onclick = function () {
+		// 直接使用 封装的 工具函数即可
+		/*
+			参数1:url
+			参数2:数据
+			参数3:请求的方法
+		*/
+		var backData = ajax_tool('01.test_get.php','name=huluw&skill=saveyeye','get',function(data){
+			console.log(data);
+		});
+		// 测试
+		console.log(backData);
+	}
+</script>

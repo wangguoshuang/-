@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "1.js",
+  "keywords": [
+  ],
+  "bin":{
+    "haha":"1.js"
+  },
+  "author": "KingNigel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KingNigel/test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KingNigel/test/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "commander": "*"
+  },
+  "dependencies": {
+    "commander": "*"
+  }
+}

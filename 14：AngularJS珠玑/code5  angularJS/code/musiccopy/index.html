@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐列表</title>
+	<style>
+		
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		ol {
+			min-height: 400px;
+			padding-top: 0;
+			margin: 0;
+			border: 1px solid #CCC;
+		}
+
+		ol li {
+			line-height: 40px;
+		}
+
+		ol li:hover {
+			background-color: #CCC;
+		}
+		
+		.music {
+			width: 600px;
+			margin: 100px auto;
+		}
+
+		.music nav {
+			height: 40px;
+			background: #000;
+			display: flex;
+		}
+
+		.music nav a {
+			text-align: center;
+			line-height: 40px;
+			color: #FFF;
+			text-decoration: none;
+			flex: 1;
+		}
+	</style>
+</head>
+<body ng-app="Music">
+	
+	<div class="music">
+		<nav>
+			<!-- 后端会说明需要什么样参数 -->
+			<!-- 需要一个类型ID 1，2，3，4 -->
+			<!-- 1表示流行 2表示华语 3表示欧美 4表示日韩 -->
+			<a href="#/1">流行</a>
+			<a href="#/2">华语</a>
+			<a href="#/3">欧美</a>
+			<a href="#/4">日韩</a>
+		</nav>
+		<ol>
+			<div ng-view></div>
+		</ol>
+	</div>
+
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/angular-route.js"></script>
+	<script>
+		
+		var Music = angular.module('Music', ['ngRoute']);
+		// 
+
+		Music.config(['$routeProvider', function ($routeProvider) {
+			
+			$routeProvider.when('/:id', {
+				templateUrl: './views/list.html',
+				controller: 'ListController'
+			}).otherwise({
+				redirectTo: '/1'
+			});
+
+		}]);
+
+		Music.controller('ListController', ['$scope', '$http', '$routeParams',function ($scope, $http, $routeParams) {
+			// 获取地址上参数
+			var id = $routeParams.id;
+
+			$http({
+				url: './api/list.php',
+				method: 'get',
+				params: {type: id} // 将获取到的参数传给后端
+			}).success(function (info) {
+				console.log(info);
+
+				$scope.lists = info;
+			});
+
+		}]);
+
+	</script>
+</body>
+</html>

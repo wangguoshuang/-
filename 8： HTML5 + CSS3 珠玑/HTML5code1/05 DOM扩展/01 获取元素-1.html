@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素</title>
+	<style>
+		/*CSS3的一个选择器，下次课会详讲*/
+/*		li:last-child a {
+			color: red;
+		}
+
+		a {
+			color: yellow;
+		}*/
+
+		.first {
+			color: pink;
+		}
+
+		#second {
+			color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="javascript:;" class="first">国内新闻</a></li>
+		<li><a href="javascript:;" id="second">国际新闻</a></li>
+		<li><a href="javascript:;">体育新闻</a></li>
+		<li><a href="javascript:;">娱乐新闻</a></li>
+	</ul>
+
+
+	<script>
+		// var funny = document.getElementById('funny');
+
+		// alert(funny.innerHTML);
+
+		// 1、通过CSS选择器来获取元素 2、只会获取第一个元素
+		// var funny = document.querySelector('a');
+
+		// funny.style.color = 'green';
+		
+		// 通过类选择器也可以
+		// var funny = document.querySelector('.first');
+
+		// funny.style.color = 'green';
+
+		// var funny = document.querySelector('#second');
+
+		// funny.style.color = 'green';
+
+		var funny = document.querySelector('li > a');
+
+		funny.style.color = 'green';
+
+		// $('.class');
+
+		// $('#id');
+
+		// $('#id div a');
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现 ，通过透视可以实现此目的。 perspective
+        通过透视产生的3D效果，只是视觉呈现而已，并不是真正的3d立体的盒子；
+        */
+
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            border: 1px solid #000;
+            margin:100px auto;
+            perspective:500px;
+        }
+
+        .inner{
+            width: 300px;
+            height: 300px;
+            margin:100px;
+            background-color: green;
+            border: 1px solid #000;
+
+            /*过渡*/
+            transition:all 2s;
+
+            transform:rotateY(89deg) translateZ(300px);
+        }
+
+        .box:hover .inner{
+            /*transform:rotateY(89deg) translateZ(300px);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

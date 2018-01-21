@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>Document</title>
+          <style type="text/css">
+          table {
+                    width: 500px;
+                    border-collapse: collapse;
+                    margin: 50px auto;
+          }
+          
+          td {
+                    border: 1px solid #0094ff;
+                    text-align: center;
+          }
+          </style>
+          <script type="text/javascript" src='../js/jquery.min.js'></script>
+          <script type="text/javascript" src='../js/template-native.js'></script>
+          <script type="text/template" id='starTemplate'>
+                    <% for(var i =0;i<stars.length;i++){ %>
+                              <tr>
+                                        <td>
+                                                  <%=stars[i].name%>
+                                        </td>
+                                        <td>
+                                                  <%=stars[i].birthday%>
+                                        </td>
+                                        <td><img src='<%=stars[i].picture%>'></td>
+                              </tr>
+                    <% }%>
+          </script>
+          <script type="text/javascript">
+          $(function() {
+                    $("#jsonBtn").on('click', function() {
+                              // jq发送ajax请求
+                              $.ajax({
+                                        url: 'jsonStar.php',
+                                        dataType:'json',
+                                        success: function(jsonObj) {
+                                                  // 数据 正常获取
+                                                  // 模板引擎中 写的 是 对象的 属性
+                                                  var result = template('starTemplate', jsonObj);
+                                                  // 设置给界面
+                                                  $('table').append(result);
+                                        }
+                              })
+                    })
+          })
+          </script>
+</head>
+
+<body>
+          <h1>json获取明星信息</h1>
+          <input type="button" value="获取json明星数据" id='jsonBtn'>
+          <table>
+          </table>
+</body>
+
+</html>

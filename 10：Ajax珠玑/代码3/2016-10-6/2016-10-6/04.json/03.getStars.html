@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		table{
+			margin: 100px auto;
+			width: 500px;
+		}
+		td{
+			border: 1px solid #0094ff;
+		}
+	</style>
+</head>
+<body>
+<h1>获取女神</h1>
+	<input type="button"  value="获取很多女神" id='getStars'>
+</body>
+</html>
+<script type="text/javascript">
+	document.querySelector("#getStars").onclick = function () {
+		var ajax = new XMLHttpRequest();
+
+		ajax.open('post','03.getStars.php');
+
+		ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+		ajax.send();
+
+		ajax.onreadystatechange = function () {
+			if (ajax.readyState==4&&ajax.status==200) {
+				console.log(ajax.responseText);
+
+				// 转化为 js对象 不管是 数组 还是 对象 都可以使用该方法转化
+				 var starArr = JSON.parse(ajax.responseText);
+				 console.log(starArr);
+
+				 // 这里 也放到一个table中
+				 var str ='';
+
+				 // table 开始
+				 str +='<table>';
+
+				 // 拼接tr td
+				 for (var i = 0; i < starArr.length; i++) {
+				 	// 获取 当前循环的那个 对象
+				 	var currentStar = starArr[i];
+
+				 	// 拼接到 tr
+				 	str+='<tr>';
+				 	str+='<td>'+currentStar.name+'</td>';
+				 	str+='<td>'+currentStar.skill+'</td>';
+				 	str+='<td><img src="'+currentStar.path+'"></td>';
+				 	str+='</tr>';
+				 }
+
+				 // table 结束
+				 str +='</table>';
+
+				 // 打印一下
+				 console.log(str);
+
+				 // 设置到 页面上 即可
+				 document.body.innerHTML = str;
+			}
+		}
+	}
+</script>

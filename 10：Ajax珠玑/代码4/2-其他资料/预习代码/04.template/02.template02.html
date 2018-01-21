@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	var obj1 = {
+		name:'小明',
+		godGirl:'楠哥'
+	};
+
+	// 如何 从字符串中 获取 到某段信息 正则表达式
+	var template= '我的名字是:<%=name%>,我的女神是:<%=godGirl%>';
+
+	// 使用 正则 获取 其中的 这两个地方
+	//  最开始 匹配的是 <%= 
+	//  \s* 可以有 0-多个 空白符号
+	//  () 查找 满足 小括号中 条件的 文本
+	//  [^%>]+\S   ^%> 除了 %> 以外的 所有字符 至少一个
+	//  \s* 0-多个
+	//  以%> 作为结束
+	//  // 快速 创建 正则 验证对象
+	var reg = /<%=\s*([^%>]+\S)\s*%>/;
+
+	// 使用正则对象的 验证方法第一次
+	var result = reg.exec(template);
+
+	var matchString = result[0];// <%=name%>
+	var matchWord = result[1];// name
+
+	// 使用 js中 字符串 替换的 方法 将 我们用作占位的 文本 进行替换 替换为 对象中的 属性值
+	template = template.replace(matchString,obj1[matchWord]);
+
+	// 再次 进行 验证
+	var result2 = reg.exec(template);
+
+	var matchString2 = result2[0]; //<%=godGirl%>
+	var matchWord2 = result2[1];//godGirl
+
+	template = template.replace(matchString2,obj1[matchWord2]);
+
+	console.log(template);
+
+</script>

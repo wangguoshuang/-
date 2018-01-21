@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            list-style:none;
+        }
+
+        body{
+            background-color: #eee;
+        }
+
+        section{
+            width: 1000px;
+            margin:30px auto;
+        }
+        ul{
+            background-color: #fff;
+            border: 1px solid #ccc;
+
+        }
+        ul li{
+            width: 200px;
+            height: 200px;
+            margin:10px;
+            background-color: pink;
+
+
+        }
+        section:nth-child(1) ul{
+            overflow: hidden;
+        }
+        section:nth-child(1) ul li{
+            float: left;
+        }
+
+        section:nth-child(1) ul{
+            /*让ul 采用伸缩布局*/
+            display: flex;
+        }
+
+        section:nth-child(1) ul li{
+            flex:1;
+        }
+
+        section:nth-child(2) ul{
+            /*让ul 采用伸缩布局*/
+            display: flex;
+        }
+
+        section:nth-child(2) ul li:nth-child(1){
+            flex:1;
+        }
+        section:nth-child(2) ul li:nth-child(2){
+            flex:6;
+        }
+        section:nth-child(2) ul li:nth-child(3){
+            flex:1;
+        }
+
+        section:nth-child(3) ul{
+            /*让ul 采用伸缩布局*/
+            display: flex;
+
+        }
+
+        section:nth-child(3) ul li:nth-child(1){
+
+        }
+        section:nth-child(3) ul li:nth-child(2){
+            flex:1;
+        }
+        section:nth-child(3) ul li:nth-child(3){
+            flex:3;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <section>
+        <h3>伸缩布局flex:1;</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>伸缩布局flex:1:6:1</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>伸缩布局 flex: 200px 1:3</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+
+
+</body>
+</html>

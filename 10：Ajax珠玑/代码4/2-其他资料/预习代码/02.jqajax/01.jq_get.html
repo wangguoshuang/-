@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			// 绑定点击事件
+			$("#jqAjax").on('click',function(){
+				// 发送的是 get请求
+				$.get('01.jq_get.php',{name:'jack'},function(data){
+					console.log(data);
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button"  value="jq_发送get请求" id='jqAjax'>
+</body>
+</html>

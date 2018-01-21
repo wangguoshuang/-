@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素</title>
+	<style>
+	
+		.outer li li {
+			background-color: red;
+		}
+	
+	</style>
+</head>
+<body>
+	<ul class="outer">
+		<li>
+			<a href="javascript:;">国内新闻</a>
+			<ul>
+				<li><a href="javascript:;">北京新闻</a></li>
+				<li><a href="javascript:;">天津新闻</a></li>
+			</ul>
+		</li>
+		<li><a href="javascript:;">国际新闻</a></li>
+		<li><a href="javascript:;">体育新闻</a></li>
+		<li><a href="javascript:;">娱乐新闻</a></li>
+	</ul>
+
+	<script>
+		var lis = document.getElementsByTagName('li');
+
+		// var lis = document.querySelector('.outer > li');
+
+		// lis.style.fontSize = '20px';
+
+		var lis = document.querySelectorAll('.outer > li');
+
+		// alert(lis.length);
+		
+		for(var i=0; i<lis.length; i++) {
+			// lis[i].style.fontSize = '20px';
+			lis[i].style.backgroundColor = 'green';
+		}
+	</script>
+</body>
+</html>

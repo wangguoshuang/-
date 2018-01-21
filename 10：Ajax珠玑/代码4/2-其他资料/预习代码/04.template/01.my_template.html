@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	// <tr><td>这里拼接的是 改变的值</td></tr>
+	// 准备一个 字符串
+	// 用来描述小明的
+	var str1 = '我的名字是:小明,我的女神是:楠哥';
+	var str2 = '我的名字是:小花,我的女神是:乔妹';
+	// 抽取出公共的部分
+	var str3 = '我的名字是:,我的女神是:';
+
+	// 准备了一些对象
+	var obj1= {
+		name:'小明',
+		godGirl:'楠哥'
+	}
+	var obj2= {
+		name:'小花',
+		godGirl:'乔妹'
+	}
+	var str3 = "我的名字是:"+obj1.name+",我的女神是:"+obj1.godGirl;
+
+	// 如何 从字符串中 获取 到某段信息 正则表达式
+	var str3 = '我的名字是:<%=name%>,我的女神是:<%=godGirl%>';
+
+	// 使用 正则 获取 其中的 这两个地方
+	//  最开始 匹配的是 <%= 1个
+	//  ([^%>]+\S) 匹配 除了 %> 以外的 所有内容
+	//  以%> 作为结束
+	//  // 快速 创建 正则 验证对象
+	var reg = /<%=\s*([^%>]+\S)\s*%>/;
+
+	// 使用正则对象的 验证方法
+	var result = reg.exec(str3);
+
+	var matchString = result[0];
+	var matchWord = result[1];
+	str3 = str3.replace(matchString,obj1[matchWord]);
+
+	console.log(str3);
+
+</script>

@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "1.js",
+  "keywords": [
+  ],
+  "scripts": {
+   "test":"node 1.js"
+  },
+  "bin":{
+    "hehe":"1.js"
+  },
+  "author": "KingNigel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KingNigel/test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KingNigel/test/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

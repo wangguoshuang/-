@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>使用get发送数据到服务器</h1>
+	<input type="button"  value="发送get_ajax请求" id='btnAjax'>
+</body>
+</html>
+<script type="text/javascript">
+	// 绑定点击事件
+	document.querySelector('#btnAjax').onclick = function () {
+		// 发送ajax 请求 需要 五步
+
+		// 1.创建异步对象
+		var ajaxObj = new XMLHttpRequest();
+
+		// 2.设置请求的url等参数
+		// 参数1 请求的方法 参数2 请求的url
+		// get提交的数据 是直接追加在url的后面 格式是
+		// xxx.php?pass=123
+		// 这只是一个字符串拼接  动态的传递参数
+		// '03.get_senddata.php?userName='+document.querySelector('input').value;
+		ajaxObj.open('get','03.get_senddata.php?userName=jack');
+
+		// 3.发送请求
+		ajaxObj.send();
+
+		// 假设 有一个 接返回数据的 方法ajaxObj.get();
+ 		
+
+		// 4.注册事件
+		// onreadystatechange  状态改变就会调用
+		// 如果要在 数据完美请求回来的时候 才调用 我们需要手动的 写一些判断的逻辑
+		ajaxObj.onreadystatechange = function () {
+			// 为了保证 数据 完整回来,我们一般会判断 两个值
+			if (ajaxObj.readyState==4&&ajaxObj.status==200) {
+				// 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+				// 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+				console.log('数据完美的回来了');
+
+				// 数据是保存在 异步对象的 属性中
+				console.log(ajaxObj.responseText);
+
+				// 修改页面的显示
+				document.querySelector('h1').innerHTML = ajaxObj.responseText;
+			}
+			
+		}
+	}
+</script>

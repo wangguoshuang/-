@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin:100px auto;
+
+            /*border-radius: 20px;*/
+            /*border-top-left-radius: 水平半径 垂直半径;*/
+            /*border-top-left-radius:60px 120px;*/
+            /*border-top-right-radius:60px 120px;*/
+            /*border-bottom-left-radius:60px 120px;*/
+            /*border-bottom-right-radius:60px 120px;*/
+
+            /*复合属性*/
+            /* border-radius: 水平半径{1,4}/垂直半径{1,4}  */
+            /*border-radius:60px  60px  60px 60px / 120px  120px 120px 120px ;*/
+
+            /*border-radius: 60px/120px;*/
+
+            /*border-radius: 60px;*/
+
+            /*border-radius赋值顺序*/
+
+            /* 4个角的水平垂直半径都是120*/
+            /*border-radius: 120px; */
+
+            /* 两个值时 ，
+             第一个值是 左上 和右下
+             第二值是： 右上和左下*/
+            /*border-radius: 60px 120px;*/
+
+            /*三个值时*/
+            /*
+                第一个值：左上
+                第二值：右上 和左下
+                第三个值： 右下
+            */
+            /*border-radius: 20px 60px 120px;*/
+
+            /* 四个值：*/
+            /*
+                顺时针的赋值顺序，首先总左上 -->右上——》右下--》左下
+                如果值不满 4个 去对角的值
+            */
+
+            border-radius: 10px  30px 60px 90px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

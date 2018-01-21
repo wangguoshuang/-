@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<!-- 别人封装的 考虑的内容 更多,功能也比我们自己的强大 -->
+<!-- 自己封装的目的是 知道原理 -->
+
+<!-- 使用模板引擎 01 导入.js文件 该模板引擎 不依赖于jq 直接就可以使用 -->
+<script type="text/javascript" src='../js/template-native.js'></script>
+
+<!-- 使用模板引擎 02 准备模板 -->
+<script type="text/template" id='template'>
+	<ul>
+		<li><%=name%></li>
+		<li><%=skill%></li>
+		<ul>
+			<%for(var i =0;i<friend.length;i++){ %>
+				<li><%=friend[i]%></li>
+			<%}%>
+		</ul>
+		<ul>
+			<%for(var i=0;i<brother.length;i++){%>
+				<li>名字:<%=brother[i].name%></li>
+				<li>技能:<%=brother[i].skill%></li>
+				<li>价钱:<%=brother[i].price%></li>
+			<%}%>
+		</ul>
+	</ul>
+</script>
+
+<!-- 使用模板引擎 03 准备对象 填充模板 设置到界面上 -->
+<script >
+	//  对象
+	var obj = {
+		name:"路飞",
+		skill:"橡胶机关枪",
+		friend:["葫芦娃","鸣人","黑猫警长","美少女战士"],
+		brother:[
+			{
+				name:'乔巴',
+				skill:"治病",
+				price:"50rmb"
+			},
+			{
+				name:"娜美",
+				skill:"好看",
+				price:"7000万"
+			}
+		]
+	}
+
+	// 调用 模板引擎的方法 
+	var str = template('template',obj);
+
+	console.log(str);
+
+	// 添加到界面上 即可
+	document.body.innerHTML = str;
+</script>

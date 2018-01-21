@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <title>表单注册</title>
+          <style>
+          body {
+                    margin: 0;
+                    padding: 0;
+                    background-color: #F7F7F7;
+          }
+          
+          ul {
+                    margin: 0;
+                    padding: 50px;
+                    list-style: none;
+          }
+          
+          .register {
+                    width: 800px;
+                    margin: 50px auto;
+                    background-color: #FFF;
+                    border: 1px solid #CCC;
+                    border-radius: 5px;
+          }
+          
+          li {
+                    display: flex;
+                    margin: 20px 0;
+          }
+          
+          label,
+          input {
+                    display: block;
+                    float: left;
+                    height: 46px;
+                    font-size: 24px;
+                    box-sizing: border-box;
+                    color: #333;
+          }
+          
+          label {
+                    width: 200px;
+                    line-height: 46px;
+                    margin-right: 30px;
+                    text-align: right;
+          }
+          
+          input {
+                    width: 320px;
+                    padding: 8px;
+                    line-height: 1;
+                    outline: none;
+                    position: relative;
+          }
+          
+          input.code {
+                    width: 120px;
+          }
+          
+          input.verify {
+                    width: 190px;
+                    margin-left: 10px;
+          }
+          
+          input.disabled {
+                    background-color: #CCC !important;
+          }
+          
+          input[type=button] {
+                    border: none;
+                    color: #FFF;
+                    background-color: #E64145;
+                    border-radius: 4px;
+                    cursor: pointer;
+          }
+          
+          .tips {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    height: 40px;
+                    text-align: center;
+          }
+          
+          .tips p {
+                    min-width: 300px;
+                    max-width: 400px;
+                    line-height: 40px;
+                    margin: 0 auto;
+                    color: #FFF;
+                    display: none;
+                    background-color: #C91623;
+          }
+          </style>
+          <!-- 引入jQuery -->
+          <script src="js/jquery.min.js"></script>
+          <script>
+          $(function() {
+                    /*
+                         需求1:
+                              用户 输入完注册的用户名  失去焦点事件
+                              检验 是否已经被注册
+                              如果 已经注册 弹出提示 修改p标签  焦点 回到 用户名文本框
+                     */
+                    $(".name").blur(function() {
+                              var $_this = $(this);
+                              // 发送该请求 到服务器去验证
+                              // type 默认 是get
+                              $.ajax({
+                                        url: 'php/01.checkName.php',
+                                        data: {userName:$_this.val()},
+                                        success: function(ajaxData) {
+                                                  console.log(ajaxData);
+                                                  // 根据 返回的 信息 做不同的 处理 
+                                                  if (ajaxData == '用户名存在') {
+                                                            $('.tips p')
+                                                                      .text('用户名已存在,请重新输入')
+                                                                      .fadeIn(1000) // 淡入
+                                                                      .fadeOut(1000, function() { //淡出
+                                                                                // 让焦点回去 获取焦点
+                                                                                $_this.focus(); // 获取焦点
+                                                                      });
+                                                  }
+                                        }
+                              });
+                    })
+
+
+                    // 点击注册 的时候 
+                    $(".submit").on('click',function(){
+                    /*
+                         需求2 验证密码是否相等 如果相等 那么直接发到服务器
+                     */
+                         $.ajax({
+                              // 验证信息是否正确
+                              beforeSend:function(){
+
+                                   // 1.验证的是 密码是否一致
+                                   // 获取 两个密码框
+                                   var pass1 = $('.pass').val();
+                                   var pass2 = $('.repass').val();
+                                   // 两次密码不相等 就不发送请求
+                                   if (pass1 != pass2) {
+                                        $('.tips p').text('两次的密码不一致,请检查').fadeIn(1000).fadeOut(1000,function(){
+                                             // 让 用户的焦点 回到 密码框 第二次
+                                             $('.repass').focus();
+                                        });
+                                        return false;
+                                   }
+
+                                   // 验证 用户的手机号码是否正确
+                                   var telNum = $('.mobile').val();
+                                   if (telNum.length!=11) {
+                                        $('.tips p').text('哥们,你输入的是手机号吗?').fadeIn(1000).fadeOut(1000,function(){
+                                             $('.mobile').focus();
+                                        })
+                                   }
+                              },
+                             
+                         })
+                    })
+
+                    // 点击 获取 验证码的时候
+               $('.verify').on('click',function(){
+                    $.ajax({
+                         url:"php/02.codNum.php",
+                         data:{telNum:$('.mobile').val()},
+                         success:function(ajaxData){
+                              console.log(ajaxData);
+                              $('.tips p').text('亲爱的用户,验证码已发送,请查收').fadeIn(1000).fadeOut(1000);
+                         },
+                         beforeSend:function(){
+                              // 验证手机号 是否正确 跟注册按钮一致
+                         }
+                    })
+               })
+          })
+          </script>
+</head>
+
+<body>
+          <div class="register">
+                    <form id="ajaxForm">
+                              <ul>
+                                        <li>
+                                                  <label for="">用户名</label>
+                                                  <input type="text" name="name" class="name">
+                                        </li>
+                                        <li>
+                                                  <label for="">请设置密码</label>
+                                                  <input type="password" name="pass" class="pass">
+                                        </li>
+                                        <li>
+                                                  <label for="">请确认密码</label>
+                                                  <input type="password" name="repass" class="repass">
+                                        </li>
+                                        <li>
+                                                  <label for="">验证手机</label>
+                                                  <input type="text" name="mobile" class="mobile">
+                                        </li>
+                                        <li>
+                                                  <label for="">短信验证码</label>
+                                                  <input type="text" name="code" class="code">
+                                                  <input type="button" value="获取验证码" class="verify">
+                                        </li>
+                                        <li>
+                                                  <label for=""></label>
+                                                  <input type="button" class="submit" value="立即注册">
+                                        </li>
+                              </ul>
+                    </form>
+          </div>
+          <!-- 提示信息 -->
+          <div class="tips">
+                    <p>用户名不能为空</p>
+          </div>
+</body>
+
+</html>

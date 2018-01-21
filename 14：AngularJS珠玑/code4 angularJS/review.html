@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="App">
+	<div ng-controller="TodoController">
+		<form ng-submit="add()">
+			<input type="text" ng-model="todo">
+		</form>
+		<ul>
+			<li ng-repeat="(key, val) in items">
+				<input type="checkbox" ng-checked="val.flag">
+				<span>{{val.text}}</span>
+			</li>
+		</ul>
+	</div>
+	<script src="./libs/angular.min.js"></script>
+	<script>
+		
+		var App = angular.module('App', []);
+
+		App.controller('TodoController', ['$scope', function ($scope) {
+
+			$scope.items = [];
+
+			$scope.add = function () {
+				// alert($scope.todo);
+
+				$scope.items.push({text: $scope.todo, flag: false});
+			}
+
+		}]);
+
+	</script>
+</body>
+</html>

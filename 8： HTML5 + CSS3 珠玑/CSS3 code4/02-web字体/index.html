@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+
+        /* 接下来使用特殊的图标字体
+            第一步；告诉浏览器，我将要是使用图标字体，并且告诉浏览器去哪找这个字体
+            使用
+        */
+        /* 申明字体，*/
+        @font-face {font-family: 'iconfont';
+            src: url('font/iconfont.eot'); /* IE9*/
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+            url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        /* 定义了一个类名， 添加这类名后，该盒子的字体采用图标字体*/
+        .my-font{
+            font-family: iconfont;
+        }
+
+        span:nth-child(1){
+            /*font-size:100px;*/
+            /*color:red;*/
+
+        }
+
+        span:hover{
+            color:blue;
+        }
+
+        .btn{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin: 50px auto;
+            background-color: lightseagreen;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn::after{
+            /*&#xe608; 在伪元素中  \e608*/
+            content:"\e608";
+            position: absolute;
+            left:40px;
+            top:0;
+            color:red;
+            /* 指定字体*/
+            font-family:iconfont;
+
+        }
+
+        .btn:hover::after{
+           color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <span class="my-font">&#xe608;</span>
+    <span class="my-font">&#xe605;</span>
+    <p><span class="my-font">&#xe67e;</span>苍茫天涯我的爱</p>
+
+    <div class="btn">下载</div>
+
+
+</body>
+</html>

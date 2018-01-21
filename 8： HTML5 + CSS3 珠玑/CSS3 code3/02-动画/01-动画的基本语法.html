@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            margin:100px auto;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+
+            /* 调用动画*/
+            /* animation: 动画名称 一次动画持续时间  执行次数  运动曲线*/
+            animation: gun 2s 3 linear;
+        }
+
+        /* 动画的使用：
+            1、先定义一个动画
+                @keyframes  动画名称{
+                    from{
+                          动画初始状态
+                    }
+                    to{
+                         动画结束状态
+                    }
+                }
+            2、调用动画
+        */
+
+        /* 定义了一个动画 gun */
+        @keyframes gun{
+            from{}
+
+            to{
+                transform:rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/fengche.png" alt=""/>
+    </div>
+</body>
+</html>

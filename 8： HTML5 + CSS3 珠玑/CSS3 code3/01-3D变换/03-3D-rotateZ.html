@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .rotateZ{
+            width: 330px;
+            height: 227px;
+            margin:100px auto;
+
+            /* 添加透视*/
+
+            perspective:200px;
+
+
+        }
+
+        .rotateZ img{
+            transition:all 1s;
+        }
+
+        .rotateZ:hover img{
+            /* 绕z轴进行旋转 , 顺时针*/
+            transform:rotateZ(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="rotateZ">
+        <img src="images/z.jpg" alt=""/>
+    </div>
+</body>
+</html>

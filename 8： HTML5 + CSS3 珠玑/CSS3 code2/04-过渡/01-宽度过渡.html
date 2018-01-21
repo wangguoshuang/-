@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            margin:100px auto;
+            background-color: green;
+            /* 给box添加了过渡，时间为2s*/
+            /*transition: width 1s,background-color 1s;*/
+            /* transition: 过渡属性 持续时间*/
+            /* 切记：过渡属性加给 标签本身*/
+            transition:all 1s;
+
+
+        }
+
+
+        div:hover{
+            width:600px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

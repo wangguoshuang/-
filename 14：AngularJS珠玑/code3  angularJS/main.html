@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="App">
+
+	<div ng-include="'./header.html'"></div>
+	<section>主体</section>
+	<div ng-include="'./footer.html'"></div>
+	
+	<script src="./libs/angular.min.js"></script>
+	<script>
+
+		var App = angular.module('App', []);
+
+	</script>
+</body>
+</html>

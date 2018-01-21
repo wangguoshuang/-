@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.imageBox{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #0094ff;
+			margin: 20px auto;
+		}
+		.infoBox{
+			border:1px solid #0094ff;
+			margin: 20px auto;
+			width: 300px;
+			height: 100px;
+		}
+		body{
+			text-align: center;
+			/* 如果要一行 写完 大小 通过 / 分隔 再写大小 */
+			/* background: url('xxx.jpg') no-repeat center / 200px 200px; */
+			background: url('xxx.jpg') no-repeat center / contain;
+		}
+	</style>
+</head>
+<body>
+	<!-- div.imageBox+div.infoBox+input[type='button' class='starBtn']*3 -->
+	<div class="imageBox"></div>
+	<div class="infoBox"></div>
+	<input type="button" class="starBtn" value='baby'>
+	<input type="button" class="starBtn" value='hxm'>
+	<input type="button" class="starBtn" value='lh'>			
+</body>
+</html>
+<script type="text/javascript">
+	// 为 按钮 绑定 点击事件
+	var btnList = document.querySelectorAll('.starBtn');
+
+	for (var i = 0; i < btnList.length; i++) {
+		btnList[i].onclick = function () {
+			var ajax = new XMLHttpRequest();
+
+			// 使用post
+			ajax.open('post','01.star_onlyImage.php');
+
+			// 必须要设置 请求报文
+			ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+			// 发送请求 name=jay
+			ajax.send('name='+this.value);
+
+			// 注册事件
+			ajax.onreadystatechange = function () {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					// console.log(ajax.responseText);
+
+					// 修改页面的显示
+					// 获取div 修改 背景属性 即可
+					document.querySelector('.imageBox').style.background = 'url('+ajax.responseText+') no-repeat center / cover';
+
+					// 设置 背景图片的大小
+					// document.querySelector('.imageBox').style.backgroundSize = '10px 10px';
+				}
+			}
+		}
+	}
+</script>

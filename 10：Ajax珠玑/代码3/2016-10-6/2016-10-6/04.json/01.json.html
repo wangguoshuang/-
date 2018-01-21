@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	// json 字符串
+	// 如果是对象 使用{} 包裹
+	// 如果是 数组 使用[] 包裹
+	// 属性名 必须使用双引号包裹
+	// 属性名 跟属性值 之间 使用冒号分隔
+	// 属性值 也必须使用双引号包裹 (如果是数字 可以不包裹)
+
+	
+	/* 
+	var str = '{
+		"name":"jack",
+		"wife":"rose",
+		"friend":"iceMountain"
+	}';
+
+	*/
+	// 类型是 字符串
+	var str = '{"name":"jack","wife":"rose","friend":"iceMountain"}';
+
+	console.log(str);
+
+	// 如果 要把他变为 js对象 必须 调用一个 方法
+	// 调用 JSON 对象的 parse方法 可以讲 json 格式的字符串 转化为 对应的 js对象
+	var jsObj = JSON.parse(str);
+
+	// 转化为对象了
+	console.log(jsObj);
+	console.log(jsObj.name);
+	console.log(jsObj.wife);
+	console.log(jsObj.friend);
+
+</script>

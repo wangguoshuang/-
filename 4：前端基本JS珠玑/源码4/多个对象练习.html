@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var stu1 = creatSudent("张三");
+	var stu2 = creatSudent("李四");
+	console.log(stu1);
+	stu1.sayHi();
+	console.log(stu2);
+    stu2.sayHi();
+    //创建一个函数
+   function creatSudent(name) {
+     var student = new Object();
+     student.name = name;
+     student.sayHi = function () {
+     	 console.log(this.name+"说: 大家好!");
+     }
+     return student;
+   }
+
+
+
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Music">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐列表</title>
+	<style>
+
+		.music-box {
+			width: 400px;
+			margin: 100px auto;
+		}
+
+		nav {
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			background-color: #000;
+			display: flex;
+		}
+
+		a {
+			display: block;
+			flex: 1;
+			color: #FFF;
+			text-decoration: none;
+		}
+
+		ul {
+			padding: 0 10px;
+			margin: 0;
+			list-style: none;
+			border: 1px solid #CCC;
+		}
+
+		ul li {
+			line-height: 1;
+			padding: 5px 0;
+			margin: 5px 0;
+		}
+
+		ul li:hover {
+			background-color: #d8f0f0;
+		}
+	</style>
+</head>
+<body>
+	<div class="music-box">
+		<nav ng-controller="NavController">
+			<a href="#/{{nav.id}}" ng-repeat="nav in navs">{{nav.text}}</a>
+		</nav>
+		<div ng-view></div>
+	</div>
+	<script src="../libs/angular.min.js"></script>
+	<script src="../libs/angular-route.js"></script>
+	<script>
+		var App = angular.module('Music', ['ngRoute']);
+
+		App.config(['$routeProvider', function($routeProvider) {
+			$routeProvider.when('/:pid', {
+				templateUrl: 'tpl.html',
+				controller: 'ListController'
+			});
+		}])
+
+		App.controller('NavController', ['$scope', '$http', function($scope, $http) {
+
+			$http({
+				method: 'get',
+				url: 'navs.php'
+			}).success(function (data) {
+				$scope.navs = data;
+			});
+		}])
+
+		App.controller('ListController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+
+			var pid = $routeParams.pid || 1;
+
+			$http({
+				method: 'get',
+				url: 'list.php',
+				params: {pid: pid}
+			}).success(function (data) {
+				$scope.lists = data;
+			});
+
+		}])
+	</script>
+</body>
+</html>

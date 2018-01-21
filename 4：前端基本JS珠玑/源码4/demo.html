@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 1210px;
+            height: 80px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+
+
+<script>
+
+    var div = document.getElementsByTagName("div")[0];
+    div.onclick = function () {
+        this.style.display = "none";
+    }
+
+</script>
+</body>
+</html>
