@@ -44,7 +44,7 @@
             //循环遍历放入另一侧的select标签中
             for(var i=arr.length-1;i>=0;i--){
                 //放入sel2中，不能用push，要用appendChild;
-                sel2.appendChild(arr[0]);
+                sel2.appendChild(arr[i]);
             }
         }
         //同理
@@ -54,7 +54,7 @@
             //循环遍历放入另一侧的select标签中
             for(var i=arr.length-1;i>=0;i--){
                 //放入sel2中，不能用push，要用appendChild;
-                sel1.appendChild(arr[0]);
+                sel1.appendChild(arr[i]);
             }
         }
 

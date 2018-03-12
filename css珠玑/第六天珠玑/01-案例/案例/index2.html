@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body,h1,h2,h3,h4,h5,h6,p{
+			font: 12px "宋体","微软雅黑";
+		}
+		ul,li{
+			list-style: none;
+		}
+		img{
+			border: 0 none;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.header{
+			width:980px;
+			height: 62px;
+			margin:0 auto;
+			
+		}
+		.logo{
+			width: 179px;
+			height: 39px;
+			margin-top: 20px;
+
+		}
+		input{
+			border: 0 none;
+			outline-style: none;
+		}
+		.search{
+			margin-top: 20px;
+		}
+		.search input[type=text]{
+			width: 168px;
+			height: 28px;
+			border: 1px solid #ececec;
+		}
+		.search input[type=button]{
+			width: 30px;
+			height: 30px;
+			background: url("images/search2.jpg");
+			
+		}
+		.nav{
+			height: 55px;
+			background: url("images/nav_bg.png");
+			border-top: 1px solid #ececec;
+		}
+		.nav-list,.banner,.gg-con,.news{
+			width: 980px;
+			margin: 0 auto;
+
+		}
+		.nav-list li{
+			float:left;
+			height: 55px;
+			line-height: 55px;
+			background: url("images/nav_bg-line.png") no-repeat right top;
+
+
+
+		}
+		.nav-list li a{
+			display: inline-block;
+			text-decoration: none;
+			color: #000;
+			font-size: 12px;
+			font-weight: 700;
+			padding: 0 46px;
+			
+		}
+		.nav-list li a:hover{
+			color:green;
+		}
+		.gg{
+			height: 29px;
+			background: #fbfbfb;
+			border-top: 1px solid #efefef;
+			border-bottom: 1px solid #efefef;
+			margin-bottom: 20px;
+		}
+		.gg-left{
+			height: 29px;
+			line-height: 29px;
+		}
+		.gg-right{
+			margin-top:6px;
+		}
+		.pro,.news-list,.tec{
+			height: 224px;
+			
+			float: left;
+		}
+		.pro{
+			width: 310px;
+			border: 1px solid #E4E4E4;
+			position: relative;
+			margin: 0 12px 0 0;
+		}
+		.news-pub{
+			margin: 13px 0 0 6px;
+		}
+		.news-pub img{
+			vertical-align: middle;
+		}
+		.pro-pic{
+			position: absolute;
+			left: 50px;
+			top: 60px;
+		}
+		.l-sj{
+			position: absolute;
+			left: 23px;
+			top: 120px;
+		}
+		.r-sj{
+			position: absolute;
+			right: 23px;
+			top: 120px;
+		}
+		.news-list{
+			width: 373px;
+			border: 1px solid #ececec;
+			
+
+		}
+		.news-list ul{
+			margin: 10px 18px 0 23px;
+		}
+		.news-list li{
+			height: 27px;
+			line-height: 27px;
+			border-bottom: 1px dashed #dcdcdc;
+		}
+		.ftcolor{
+			color:red;
+			font-weight: 700;
+		}
+		.tec{
+			width: 268px;
+			border: 1px solid #ececec;
+			float: right;
+		}
+		.tec-pub{
+			height: 12px;
+			margin: 10px 0 0 28px;
+			border-left: 3px solid #009900;
+			padding-left: 4px;
+		}
+		.tec p{
+			line-height: 18px;
+			margin: 30px 0px 0px 28px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="header">
+		<div class="logo fl">
+			<img src="images/logo.jpg" alt="">
+		</div>
+		<div class="search fr">
+			<input type="text" value="请输入" class="fl">  <input type="button" class="fr">
+		</div>
+	</div>
+	<div class="nav">
+		<div class="nav-list">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">智能手机</a></li>
+				<li><a href="#">电脑</a></li>
+				<li><a href="#">配件</a></li>
+				<li><a href="#">服务支持</a></li>
+				<li><a href="#">关于尚合</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="banner">
+		<img src="images/banner.jpg" alt="">
+	</div>
+	<div class="gg">
+		<div class="gg-con">
+			<div class="gg-left fl">最新公告：尚合Aone智能手机入网证已获取工信部门审批下发。尚合官网</div>
+			<div class="gg-right fr">
+				<img src="images/renren.png" alt="">
+				<img src="images/weibo.png" alt="">
+				<img src="images/xinlang.png" alt="">
+				<img src="images/zone.png" alt="">
+			</div>
+		</div>
+
+	</div>
+	<div class="news">
+		<div class="pro">
+			<div class="news-pub">
+				<img src="images/o.jpg" alt="">
+				<span>新品发布</span>
+			</div>
+			<div class="pro-pic">
+				<img src="images/home_hot_01.png" alt="">
+			</div>
+			<div class="l-sj"><img src="images/left.png" alt=""></div>
+			<div class="r-sj"><img src="images/right.png" alt=""></div>			
+		</div>
+		<div class="news-list">
+			<div class="news-pub">
+				<img src="images/o.jpg" alt="">
+				<span>新闻中心</span>
+			</div>
+			<ul>
+				<li class="ftcolor">致歉公告</li>
+				<li>首批尚合Aonet已全部售馨!</li>
+				<li>【媒体报导】国产高性价比 尚合Aonet四核手机评测</li>
+				<li>我司产品已经通过了国家强制性产品3C认证</li>
+				<li>尚合Aone智能手机入网证已经获工信部门审批下发.</li>
+				<li>我司通过ISO9001:2008国际质量管理体系认证</li>
+			</ul>
+		</div>
+		<div class="tec">
+			<div class="news-pub">
+				<img src="images/o.jpg" alt="">
+				<span>新闻中心</span>
+			</div>
+			<div class="tec-pub">售后服务</div>
+			<div class="tec-pub">售后服务</div>
+			<div class="tec-pub">售后服务</div>
+			<div class="tec-pub">售后服务</div>
+			<p>深圳市汇聚众合科技发展有限公司
+				<br>服务热线：400-633-7922
+				</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,ul,li{
+			margin:0;
+			padding: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.banner{
+			width: 1259px;
+			height: 472px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.search{
+			width: 960px;
+			height: 60px;
+			background: #333;
+			position: absolute;
+			bottom:0;
+			left:50%;
+			margin-left:-480px;
+		}
+		.search ul li{
+			float: left;
+		}
+		.search ul li a{
+			display: inline-block;
+			width: 160px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			color:#fff;
+		}
+		.search ul li a:hover{
+			background: #fff;
+			color:#000;
+		}
+		.search ul li a.one:hover{
+			background: #333;
+			color:#fff;
+
+		}
+		.login{
+			position: absolute;
+			left:150px;
+			bottom: 57px;
+		}
+		.sj{
+			position: absolute;
+			left:220px;
+			bottom:48px;
+			z-index: 10;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<div class="pic"><img src="sf.png" alt=""></div>
+		<div class="search">
+			<ul>
+				<li><a href="#" class="one">运单查询</a></li>
+				<li><a href="#">运费查询</a></li>
+				<li><a href="#">时效查询</a></li>
+				<li><a href="#">服务网点查询</a></li>
+				<li><a href="#">收送范围查询</a></li>
+				<li><a href="#">客户专区</a></li>
+			</ul>
+		</div>
+		<div class="sj"><img src="4.png" alt=""></div>
+		<div class="login"><img src="3.png" alt=""></div>
+	</div>
+</body>
+</html>

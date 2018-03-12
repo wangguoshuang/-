@@ -196,7 +196,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	// Extend jQuery itself if only one argument is passed
 	if ( i === length ) {
 		target = this;
-		i--;
+		i --;
 	}
 
 	for ( ; i < length; i++ ) {

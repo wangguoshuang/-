@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/* CSS初始化 */
+	body,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,input{
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		border:0 none;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	input{
+		border:0 none;
+		outline-style: none;
+	}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right; 
+	}
+	/* 头部开始 */
+	.header{
+         width: 980px;
+         height: 39px;
+         margin: 20px auto 0px;
+	}
+	.search{
+		width: 195px;
+		height: 30px;
+		border:1px solid #cecece;
+	}
+	.search input[type="text"]{
+		width: 165px;
+		height: 30px;
+		vertical-align: top;
+	}
+	.search input[type="button"]{
+		width: 30px;
+		height: 30px;
+		vertical-align: top;
+		background: url("images/search2.jpg");
+	}
+	.nav{
+		height: 55px;
+		background: url("images/nav_bg.png");
+		border:1px solid #bbb;
+	} 
+	.nav-con{
+		width: 980px;
+		height: 55px;
+		/* background: #aaa; */
+        margin: 0 auto;
+	}
+	.nav-con li{
+		float: left;
+	}
+	.nav-con li a{
+		display: inline-block;
+		height: 55px;
+		font: 700 12px/55px 宋体;
+		padding: 0 30px;
+		color: #000;
+		background: url("images/nav_bg-line.png") no-repeat right;
+	}
+	.nav-con li a:hover{
+		color: yellow;
+	}
+	.banner{
+		width: 980px;
+		height: 597px;
+		margin: 0 auto;
+	}
+	.mes{
+		height: 32px;
+	    border-top: 1px solid #efefef;
+	    border-bottom:1px solid #efefef ;
+	    background: #fbfbfb;
+
+	}
+	</style>
+</head>
+<body>
+	<!-- .header>.logo>img[src="images/logo.jpg"]+^.search>input[type="text"]+input[type="button"] -->
+	<!-- 头部部分开始 -->
+	<div class="header">
+		<div class="logo fl"><img src="images/logo.jpg" alt=""></div>
+		<div class="search fr"><input type="text" value="请输入。。。"><input type="button"></div>
+	</div>
+	<div class="nav">
+		<div class="nav-con">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">智能手机</a></li>
+				<li><a href="#">平板电脑</a></li>
+				<li><a href="#">配件</a></li>
+				<li><a href="#">服务支持</a></li>
+				<li><a href="#">关于尚和</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 头部部分结束 -->
+	<!-- banner部分开始 -->
+	<div class="banner">
+	<img src="images/banner.jpg" alt="">
+	</div>
+	<!-- banner部分结束 -->
+	<!-- 信息部分开始 -->
+	<!-- .mes>.mes-con>.mes-con-l+.mes-con-r -->
+	<div class="mes">
+		<div class="mes-con">
+			<div class="mes-con-l"></div>
+			<div class="mes-con-r"></div>
+		</div>
+	</div>
+</body>
+</html>

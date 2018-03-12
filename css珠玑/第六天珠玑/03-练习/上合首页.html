@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/*css初始化*/
+	body,div,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,input{
+		margin:0;
+		padding: 0;
+		font:12px simsun;
+	}
+	img{
+		border: 0 none;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	input{
+		border: 0 none;
+		outline-style: none;
+	}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	.clearfix:after{
+		content: ".";
+		display: block;
+		height: 0;
+		line-height: 0;
+		visibility: hidden;
+		clear:both;
+	}
+	.clearfix{
+		zoom: 1;
+	}
+	/*头部开始*/
+	.header{
+		width: 980px;
+		height: 39px;
+		margin: 20px auto 0px;
+	}
+	.logo{
+		width: 179px;
+		height: 39px;
+	}
+	.search{
+		width: 195px;
+		height: 30px;
+		border:1px solid #ECECEC;
+	}
+	.search input[type="text"]{
+		width: 165px;
+		height: 30px;
+		vertical-align: top;
+		
+	}
+	.search input[type="button"]{
+		width: 30px;
+		height: 30px;
+		vertical-align: top;
+		background: url("images/search2.jpg");
+		
+	}
+	.nav{
+		height: 55px;
+		background: url("images/nav_bg.png");
+		border-top:1px solid #bbb;
+	}
+	.nav-con{
+		width: 980px;
+		height: 55px;
+		margin: 0 auto;
+	}
+	.nav-con li{
+		float: left;
+	}
+	.nav-con li a{
+		display: inline-block;
+		height: 55px;
+		font: 700 12px/55px 宋体;
+		color:#000;
+		padding:0 30px;
+		background: url("images/nav_bg-line.png") no-repeat right;
+	}
+	.nav-con li a:hover{
+		color:#7cb609;
+	}
+	/*头部结束*/
+	/*banner部分开始*/
+	.banner{
+		width: 980px;
+		height: 597px;
+		margin: 0 auto;
+	}
+	.mes{
+		height: 32px;
+		background: #FBFBFB;
+		border-top: 1px solid #EFEFEF;
+		border-bottom: 1px solid #EFEFEF;
+		margin-bottom: 15px;
+
+	}
+	.mes-con{
+		width: 980px;
+		height: 32px;
+		margin:0 auto;
+	}
+	.mes-con-l{
+		height: 32px;
+		line-height: 32px;
+	}
+	.mes-con-r{
+		height: 16px;
+		margin-top: 8px;
+	}
+	/*banner 部分结束*/
+	/*新闻开始*/
+	.news{
+		width: 980px;
+		margin: 15px auto;
+
+
+	}
+	.news-left,.news-cen,.news-right{
+		border:1px solid #E4E4E4;
+		height: 224px;
+	}
+	/*新闻左边盒子左边盒子开始*/
+	.news-left{
+		width: 310px;
+		position: relative;
+
+		
+	}
+	.news-cen{
+		width: 373px;
+		margin-left:12px;
+	}
+	.news-right{
+		width: 268px;
+	}
+	.pro{
+		margin: 14px 0 0 6px;
+		color:#7AB800;
+	}
+	.pro img{
+		vertical-align: middle;
+	}
+	.pro-pic{
+		position: absolute;
+		left:55px;
+		top:45px;
+	}
+	.sj-l{
+	position: absolute;
+	left:23px;
+	bottom:90px;
+	}
+	.sj-r{
+	position: absolute;
+	right:23px;
+	bottom:90px;
+	}
+	/*新闻中间盒子*/
+	.news-cen ul{
+		margin:10px 17px 0;
+
+	}
+	.news-cen ul li{
+		height: 27px;
+		line-height: 27px;
+		border-bottom: 1px dashed #DCDCDC;
+	}
+	.news-cen ul li a{
+		color:#000;
+	}
+	.news-cen ul li a.sorry{
+		color:#ff0000;
+		font-weight: 700;
+
+	}
+	/*新闻右边盒子*/
+	.tec{
+		margin: 10px 0 30px 28px;
+		
+	}
+	.tec li{
+		height: 12px;
+		border-left: 3px solid #7AB800;
+		margin-top:10px;
+		line-height: 12px;
+		padding-left:5px;
+	}
+	.news-right p{
+		margin-left:28px;
+		line-height: 18px;
+	}
+	/*新闻右边盒子结束*/
+	/*底部开始*/
+	.footer{
+		height: 280px;
+		background: #2D2D2D;
+		border-bottom: 1px dashed #414141;
+		
+	}
+	.footer-con{
+		width: 980px;
+		margin: 0 auto;
+	}
+	.footer-con dl{
+		float: left;
+		margin-top:20px;
+		margin-right:40px;
+	}
+	.footer-con dl dt{
+		color:#c0c0c0;
+	}
+	.footer-con dl dd{
+		color:#707070;
+		margin-top: 20px;
+	}
+	.bot{
+		background: #2D2D2D;
+		height: 54px;
+		text-align: center;
+		padding-top:30px;
+	}
+
+
+	</style>
+</head>
+<body>
+	<!-- .header>.logo>img[src="images/logo.jpg"]+^.search>input[type="text"]+input[type="button"] -->
+	<!-- 头部部分开始 -->
+	<div class="header">
+		<div class="logo fl"><img src="images/logo.jpg" alt=""></div>
+		<div class="search fr">
+		<input type="text" value="请输入..."><input type="button"></div>
+	</div>
+	<div class="nav">
+		<div class="nav-con">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">智能手机</a></li>
+				<li><a href="#">平板电脑</a></li>
+				<li><a href="#">配件</a></li>
+				<li><a href="#">服务支持</a></li>
+				<li><a href="#">关于尚合</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 头部部分结束 -->
+	<!-- banner部分开始 -->
+	<div class="banner">
+		<img src="images/banner.jpg" alt="">
+	</div>
+	<!-- banner部分结束 -->
+	<!-- 信息部分开始 -->
+	<div class="mes">
+		<div class="mes-con">
+			<div class="mes-con-l fl">最新公告：尚合Aone智能手机入网证已获取工信部门审批下发。尚合官网</div>
+			<div class="mes-con-r fr">
+			<img src="images/zone.png" alt="">
+			<img src="images/weibo.png" alt="">
+			<img src="images/xinlang.png" alt="">
+			<img src="images/renren.png" alt=""></div>
+		</div>
+	</div>
+	<!-- 新闻部分开始 -->
+	<div class="news clearfix">
+	<!-- 新闻左盒子 -->
+		<div class="news-left fl">
+			<div class="pro">
+				<img src="images/o.jpg" alt="">
+				新品发布
+			</div>
+			<div class="pro-pic"><img src="images/home_hot_01.png" alt=""></div>
+			<div class="sj-l"><img src="images/left.png" alt=""></div>
+			<div class="sj-r"><img src="images/right.png" alt=""></div>
+		</div>
+		<!-- 新闻左盒子结束 -->
+		<!-- 新闻中间盒子 -->
+		<div class="news-cen fl">
+			<div class="pro">
+				<img src="images/o.jpg" alt="">
+				新闻中心
+			</div>
+			<ul>
+				<li><a href="#" class="sorry">致歉公告</a></li>
+				<li><a href="#">首批尚合Aonet已全部售馨!</a></li>
+				<li><a href="#">【媒体报导】国产高性价比 尚合Aonet四核手机评测</a></li>
+				<li><a href="#">尚合Aone智能手机入网证已经获工信部门审批下发.</a></li>
+				<li><a href="#">我司通过ISO9001:2008国际质量管理体系认证</a></li>
+				<li><a href="#">我司产品已经通过了国家强制性产品3C认证</a></li>
+			</ul>
+		</div>
+		<!-- 新闻中间盒子结束-->
+		<!-- 新闻右边盒子开始 -->
+		<div class="news-right fr">
+			<div class="pro">
+				<img src="images/o.jpg" alt="">
+				技术与支持
+			</div>
+			<div class="tec">
+				<ul>
+					<li>售后服务</li>
+					<li>投诉与建议</li>
+					<li>联保网点</li>
+					<li>常见问题FAQ</li>
+				</ul>
+			</div>
+			<p>深圳市汇聚众合科技发展有限公司<br>
+			   服务热线：400-633-7922</p>
+		</div>
+		<!-- 新闻右边盒子结束 -->
+	</div>
+	<!-- 新闻部分结束 -->
+	<!-- 底部开始 -->
+	<div class="footer">
+		<div class="footer-con">
+		<dl>
+			<dt>尚合首页</dt>
+			<dd>返回首页</dd>
+		</dl>
+		<dl>
+			<dt>尚合首页</dt>
+			<dd>返回首页</dd>
+		</dl>
+		<dl>
+			<dt>尚合首页</dt>
+			<dd>返回首页</dd>
+		</dl>
+		<dl>
+			<dt>尚合首页</dt>
+			<dd>返回首页</dd>
+		</dl>
+		</div>
+	</div>
+	<div class="bot">深圳市会居中和优先公司深圳市会居中和优先公司深圳市会居中和优先公司深圳市<br>
+会居中和优先公司深圳市会居中和优先公司深圳市会居中和优先公司</div>
+</body>
+</html>
